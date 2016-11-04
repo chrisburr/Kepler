@@ -1,0 +1,82 @@
+!-----------------------------------------------------------------------------
+! Package     : Tb/TbIO
+! Responsible :
+! Purpose     : Testbeam algorithms dealing with input/output
+!-----------------------------------------------------------------------------
+
+! 2016-07-25 - Heinrich Schindler
+ - Add scol to hit tuple.
+
+! 2016-04-26 - Tim Evans
+ - Added option to use TPX3 to set global heartbeat.
+
+! 2016-01-28 - Heinrich Schindler
+ - Move code from constructor of TbHit to TbEventBuilder.
+
+! 2015-10-23 - Heinrich Schindler
+ - Fix compiler warnings in TbCombatBuilder (unused class members) and 
+   TbEventBuilder (replace fabs by abs).
+
+!=========================== TbIO v3r0  ============================
+
+! 2015-07-16 - Panagiotis Tsopelas
+ - Added sCol() method in TbTupleWriter to access extra columns on Triples.
+
+!=========================== TbIO v2r0 2015-05-19 ============================
+
+! 2015-05-18 - Tim Evans
+ - Added trigger output for tracks for external users
+
+! 2015-01-24 - Heinrich Schindler
+ - Add .cpp file for TbRawFile. Add comments.
+ - Add back some checks in TbEventBuilder.
+
+! 2015-01-22 - Heinrich Schindler
+ - Follow renamings in TbKernel (mainly TbGeometrySvc).
+
+! 2014-12-12 - Heinrich Schindler
+ - Follow renaming of TbHit::plane to TbHit::device.
+
+! 2014-11-17 - Tim Evans
+ - TbRawFile now inherits from ITbRawFile and is (semi) obsolete, in favour of 
+   TbNetworkRawFile, which can use EOS without mounting - currently only network 
+   version is used.
+ - Input parameter out of the EventBuilder to reflect Kernel changes - now 
+   gets data from TbDataSvc
+
+!=========================== TbIO v1r1 2014-11-30 ============================
+
+! 2014-10-4 - Tim Evans
+ - Add new algorithm TbPacketRecycler to facilitate 
+   trading of hits between events
+ - TbRawStream changed to a GaudiTool such that packets can be recached
+
+! 2014-09-24 - Dan Saunders
+ - Added alternative event builder and .py files to allow use with Combat 
+   Telescope. 
+
+!=========================== TbIO v1r0 2014-08-18 ============================
+ 
+! 2014-08-12 - Heinrich Schindler
+ - Fix constexpr bug introduced in previous commit.
+ - Minor changes in TbTupleWriter.
+
+! 2014-08-11 - Heinrich Schindler
+ - Small speed improvements in TbEventBuilder and helper classes.
+
+! 2014-08-08 - Tim Evans
+ - Restyled the TupleWriter so that branches are preallocated and 
+   variable size fixed 
+ - Added dynamic arrays for cluster - hit association and track - cluster 
+   association
+
+! 2014-08-02 - Heinrich Schindler
+ - Make min. number of non-empty devices required for an event configurable.
+
+! 2014-07-25 - Tim Evans
+ - Added split file support
+ - Added file / event skipping
+
+! 2014-07-21 - Heinrich Schindler
+ - Initial import.
+ - Move over TbTupleWriter from TbAlgorithms.

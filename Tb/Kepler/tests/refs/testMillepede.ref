@@ -1,0 +1,650 @@
+# setting LC_ALL to "C"
+# --> Including file '/afs/cern.ch/user/h/hschindl/cmtuserkepler/KEPLER/KEPLER_HEAD/millepede.py'
+Added tool: TbMillepede (0)
+# <-- End of file '/afs/cern.ch/user/h/hschindl/cmtuserkepler/KEPLER/KEPLER_HEAD/millepede.py'
+# applying configuration of Kepler
+# /***** User Kepler/Kepler **************************************************************************
+# |-UseSimpleTracking = True
+# |-Tracking          = True
+# |-Monitoring        = True
+# |-TimingConfigFile  = ''
+# |-TupleFile         = ''
+# |-AlignmentFile     = 'eos/lhcb/testbeam/velo/timepix3/July2015/RootFiles/Run7615/Conditions/Alignment7615mille.dat'
+# |                   (default: '')
+# |-EvtMax            = -1
+# |-WriteTuples       = False
+# |-HistogramFile     = 'Kepler-histos.root'  (default: '')
+# |-Alignment         = True  (default: False)
+# |-PixelConfigFile   = []  (default: [])
+# |-UT                = False
+# |-UserAlgorithms    = []  (default: [])
+# |-InputFiles        = ['eos/lhcb/testbeam/velo/timepix3/July2015/RawData/Run7615/']  (default: [])
+# |-Sim               = False
+# \----- (End of User Kepler/Kepler) -----------------------------------------------------------------
+ApplicationMgr    SUCCESS 
+====================================================================================================================================
+                                                   Welcome to Kepler version v3r0
+                                          running on lxplus0029.cern.ch on Fri Oct 23 16:15:34 2015
+====================================================================================================================================
+ApplicationMgr       INFO Application Manager Configured successfully
+TbDataSvc            INFO Reading File: root://eoslhcb.cern.ch//eos/lhcb/testbeam/velo/timepix3/July2015/RawData/Run7615/W0002_B05-150714-180051-7615-1.dat
+TbDataSvc            INFO Reading File: root://eoslhcb.cern.ch//eos/lhcb/testbeam/velo/timepix3/July2015/RawData/Run7615/W0002_C05-150714-180051-7615-1.dat
+TbDataSvc            INFO Reading File: root://eoslhcb.cern.ch//eos/lhcb/testbeam/velo/timepix3/July2015/RawData/Run7615/W0002_D05-150714-180051-7615-1.dat
+TbDataSvc            INFO Reading File: root://eoslhcb.cern.ch//eos/lhcb/testbeam/velo/timepix3/July2015/RawData/Run7615/W0002_E05-150714-180051-7615-1.dat
+TbDataSvc            INFO Reading File: root://eoslhcb.cern.ch//eos/lhcb/testbeam/velo/timepix3/July2015/RawData/Run7615/W0002_F05-150714-180051-7615-1.dat
+TbDataSvc            INFO Reading File: root://eoslhcb.cern.ch//eos/lhcb/testbeam/velo/timepix3/July2015/RawData/Run7615/W0002_G05-150714-180051-7615-1.dat
+TbDataSvc            INFO Reading File: root://eoslhcb.cern.ch//eos/lhcb/testbeam/velo/timepix3/July2015/RawData/Run7615/W0002_H07-150714-180051-7615-1.dat
+TbDataSvc            INFO Reading File: root://eoslhcb.cern.ch//eos/lhcb/testbeam/velo/timepix3/July2015/RawData/Run7615/W0002_J06-150714-180051-7615-1.dat
+TbDataSvc            INFO Reading File: root://eoslhcb.cern.ch//eos/lhcb/testbeam/velo/timepix3/July2015/RawData/Run7615/W0009_G08-150714-180051-7615-1.dat
+TbGeometrySvc        INFO Importing alignment conditions from root://eoslhcb.cern.ch//eos/lhcb/testbeam/velo/timepix3/July2015/RootFiles/Run7615/Conditions/Alignment7615mille.dat
+TbGeometrySvc        INFO  0 W0002_J06           13.907     13.494      3.778      2.984      3.272      0.008
+TbGeometrySvc        INFO  1 W0002_B05           14.293     13.781     52.475      2.985      3.267      0.002
+TbGeometrySvc        INFO  2 W0002_C05           14.214     13.838     93.675      2.988      3.287     -0.001
+TbGeometrySvc        INFO  3 W0002_D05           14.067     14.101    128.900      2.991      3.295      0.006
+TbGeometrySvc        INFO  4 W0009_G08           -0.129     15.709    252.014      3.125     -0.449     -0.053
+TbGeometrySvc        INFO  5 W0002_G05           -1.083     13.560    410.853      3.266      0.166     -0.049
+TbGeometrySvc        INFO  6 W0002_F05           -0.568     13.841    443.837      3.250      0.180     -0.044
+TbGeometrySvc        INFO  7 W0002_H07            0.301     14.130    494.828      3.247      0.175     -0.045
+TbGeometrySvc        INFO  8 W0002_E05            0.289     14.324    538.655      3.233      0.180     -0.048
+RndmGenSvc.Engine    INFO Generator engine type:CLHEP::RanluxEngine
+RndmGenSvc.Engine    INFO Current Seed:1234567 Luxury:3
+RndmGenSvc           INFO Using Random engine:HepRndm::Engine<CLHEP::RanluxEngine>
+TimingAuditor.T...   INFO This machine has a speed about   2.71 times the speed of a 2.8 GHz Xeon.
+NTupleSvc            INFO Added stream file:Kepler-tuple.root as FILE1
+KeplerSequencer      INFO Member list: GaudiSequencer/Telescope, GaudiSequencer/Monitoring, GaudiSequencer/Output
+Telescope            INFO Member list: TbEventBuilder, TbClustering, GaudiSequencer/Tracking, TbTriggerAssociator, TbClusterAssociator, TbAlignment
+RootHistSvc          INFO Writing ROOT histograms to: Kepler-histos.root
+HistogramPersis...   INFO Added successfully Conversion service:RootHistSvc
+TbEventBuilder       INFO W0002_B05 (device 1) is mapped to plane 1
+TbEventBuilder       INFO W0002_C05 (device 2) is mapped to plane 2
+TbEventBuilder       INFO W0002_D05 (device 3) is mapped to plane 3
+TbEventBuilder       INFO W0002_E05 (device 8) is mapped to plane 8
+TbEventBuilder       INFO W0002_F05 (device 6) is mapped to plane 6
+TbEventBuilder       INFO W0002_G05 (device 5) is mapped to plane 5
+TbEventBuilder       INFO W0002_H07 (device 7) is mapped to plane 7
+TbEventBuilder       INFO W0002_J06 (device 0) is mapped to plane 0
+TbEventBuilder       INFO W0009_G08 (device 4) is mapped to plane 4
+TbEventBuilder       INFO Initialization successful - reading 73582112 packets
+Tracking             INFO Member list: TbSimpleTracking
+TbAlignment          INFO Adding tool TbMillepede
+TbAlignment.s0       INFO Using default degrees of freedom.
+Monitoring           INFO Member list: TbHitMonitor, TbClusterPlots, TbTrackPlots, TbTriggerMonitor, TbDUTMonitor
+Output               INFO Member list: 
+ApplicationMgr       INFO Application Manager Initialized successfully
+ApplicationMgr       INFO Application Manager Started successfully
+TbAlignment          INFO Collected 1000 alignment tracks
+TbAlignment          INFO Collected 2000 alignment tracks
+TbAlignment          INFO Collected 3000 alignment tracks
+TbAlignment          INFO Collected 4000 alignment tracks
+TbAlignment          INFO Collected 5000 alignment tracks
+TbAlignment          INFO Collected 6000 alignment tracks
+TbAlignment          INFO Collected 7000 alignment tracks
+TbAlignment          INFO Collected 8000 alignment tracks
+TbAlignment          INFO Collected 9000 alignment tracks
+TbAlignment          INFO Collected 10000 alignment tracks
+TbAlignment.s0       INFO Millepede alignment
+TbAlignment.s0       INFO                                            
+TbAlignment.s0       INFO             * o o                   o      
+TbAlignment.s0       INFO               o o                   o      
+TbAlignment.s0       INFO    o ooooo  o o o  oo  ooo   oo   ooo  oo  
+TbAlignment.s0       INFO     o  o  o o o o o  o o  o o  o o  o o  o 
+TbAlignment.s0       INFO     o  o  o o o o oooo o  o oooo o  o oooo 
+TbAlignment.s0       INFO     o  o  o o o o o    ooo  o    o  o o    
+TbAlignment.s0       INFO     o  o  o o o o  oo  o     oo   ooo  oo  ++ starts
+TbAlignment.s0       INFO                                            
+TbAlignment.s0       INFO Feeding Millepede with 10334 tracks...
+TbAlignment.s0       INFO Determining global parameters...
+TbAlignment.s0       INFO Iteration 1 (using 10334 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78948
+TbAlignment.s0       INFO Iteration 2 (using 8825 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.77975
+TbAlignment.s0       INFO Iteration 3 (using 8820 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.77973
+TbAlignment.s0       INFO Iteration 4 (using 8820 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.77973
+TbAlignment.s0       INFO Iteration 5 (using 8820 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.77973
+TbAlignment.s0       INFO Iteration 6 (using 8820 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.77973
+TbAlignment.s0       INFO Iteration 7 (using 8820 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.77973
+TbAlignment.s0       INFO Iteration 8 (using 8820 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.77973
+TbAlignment.s0       INFO Iteration 9 (using 8820 tracks)
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO  Result of fit for global parameters
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO    I    Difference    Last step      Error        Pull     Global corr.
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO    0    -0.001165     0.000000      0.00031     -0.01165      0.98592
+TbAlignment.s0       INFO    1    -0.000497     0.000000      0.00014     -0.00497      0.93812
+TbAlignment.s0       INFO    2     0.000902    -0.000000      0.00017      0.00902      0.96087
+TbAlignment.s0       INFO    3     0.001652    -0.000000      0.00033      0.01652      0.98997
+TbAlignment.s0       INFO    4    -0.001484     0.000000      0.00026     -0.01484      0.98375
+TbAlignment.s0       INFO    5    -0.000578     0.000000      0.00021     -0.00578      0.97451
+TbAlignment.s0       INFO    6     0.000692    -0.000000      0.00018      0.00692      0.96187
+TbAlignment.s0       INFO    7     0.000477     0.000000      0.00027      0.00477      0.98050
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO    8     0.005849    -0.000000      0.00121      0.05849      0.99907
+TbAlignment.s0       INFO    9     0.001895    -0.000000      0.00046      0.01895      0.99415
+TbAlignment.s0       INFO   10    -0.002670     0.000000      0.00051     -0.02670      0.99557
+TbAlignment.s0       INFO   11    -0.006050     0.000000      0.00130     -0.06051      0.99934
+TbAlignment.s0       INFO   12    -0.002986    -0.000000      0.00075     -0.02986      0.99805
+TbAlignment.s0       INFO   13    -0.000231    -0.000000      0.00032     -0.00231      0.98888
+TbAlignment.s0       INFO   14     0.000478     0.000000      0.00023      0.00478      0.97670
+TbAlignment.s0       INFO   15     0.003715    -0.000000      0.00096      0.03716      0.99852
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO   16          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   17          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   18          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   19          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   20          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   21          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   22          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   23          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO   24     0.004836    -0.000000      0.00072      0.48490      0.98199
+TbAlignment.s0       INFO   25     0.004713    -0.000000      0.00069      0.47246      0.98153
+TbAlignment.s0       INFO   26     0.004560    -0.000000      0.00067      0.45699      0.98662
+TbAlignment.s0       INFO   27     0.005067    -0.000000      0.00066      0.50782      0.98705
+TbAlignment.s0       INFO   28    -0.004147     0.000000      0.00058     -0.41540      0.99657
+TbAlignment.s0       INFO   29    -0.004262     0.000000      0.00062     -0.42707      0.99729
+TbAlignment.s0       INFO   30    -0.005032     0.000000      0.00073     -0.50454      0.99671
+TbAlignment.s0       INFO   31    -0.005735     0.000000      0.00082     -0.57544      0.99768
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO   32    -0.005983     0.000000      0.00096     -0.60110      0.98987
+TbAlignment.s0       INFO   33    -0.005047     0.000000      0.00080     -0.50631      0.98619
+TbAlignment.s0       INFO   34    -0.003172     0.000000      0.00058     -0.31774      0.98151
+TbAlignment.s0       INFO   35    -0.002304     0.000000      0.00044     -0.23064      0.97018
+TbAlignment.s0       INFO   36     0.003912    -0.000000      0.00057      0.39183      0.99646
+TbAlignment.s0       INFO   37     0.003743    -0.000000      0.00061      0.37501      0.99720
+TbAlignment.s0       INFO   38     0.004089    -0.000000      0.00074      0.41001      0.99681
+TbAlignment.s0       INFO   39     0.004762    -0.000000      0.00083      0.47788      0.99772
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO   40     0.002804    -0.000000      0.00075      0.28119      0.99996
+TbAlignment.s0       INFO   41     0.002159    -0.000000      0.00061      0.21633      0.99995
+TbAlignment.s0       INFO   42     0.001495     0.000000      0.00049      0.14966      0.99993
+TbAlignment.s0       INFO   43     0.001045     0.000000      0.00039      0.10456      0.99990
+TbAlignment.s0       INFO   44    -0.001248     0.000000      0.00039     -0.12492      0.99993
+TbAlignment.s0       INFO   45    -0.001671     0.000000      0.00048     -0.16733      0.99995
+TbAlignment.s0       INFO   46    -0.002101     0.000000      0.00062     -0.21048      0.99996
+TbAlignment.s0       INFO   47    -0.002482     0.000000      0.00073     -0.24891      0.99997
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO 
+TbAlignment.s0       INFO             * o o                   o      
+TbAlignment.s0       INFO               o o                   o      
+TbAlignment.s0       INFO    o ooooo  o o o  oo  ooo   oo   ooo  oo  
+TbAlignment.s0       INFO     o  o  o o o o o  o o  o o  o o  o o  o 
+TbAlignment.s0       INFO     o  o  o o o o oooo o  o oooo o  o oooo 
+TbAlignment.s0       INFO     o  o  o o o o o    ooo  o    o  o o    
+TbAlignment.s0       INFO     o  o  o o o o  oo  o     oo   ooo  oo ++ ends.
+TbAlignment.s0       INFO                        o                   
+TbAlignment.s0       INFO 
+TbAlignment.s0       INFO Convergence: 0.00245
+TbAlignment.s0       INFO Updating geometry...
+TbAlignment.s0       INFO                                            
+TbAlignment.s0       INFO             * o o                   o      
+TbAlignment.s0       INFO               o o                   o      
+TbAlignment.s0       INFO    o ooooo  o o o  oo  ooo   oo   ooo  oo  
+TbAlignment.s0       INFO     o  o  o o o o o  o o  o o  o o  o o  o 
+TbAlignment.s0       INFO     o  o  o o o o oooo o  o oooo o  o oooo 
+TbAlignment.s0       INFO     o  o  o o o o o    ooo  o    o  o o    
+TbAlignment.s0       INFO     o  o  o o o o  oo  o     oo   ooo  oo  ++ starts
+TbAlignment.s0       INFO                                            
+TbAlignment.s0       INFO Feeding Millepede with 10334 tracks...
+TbAlignment.s0       INFO Determining global parameters...
+TbAlignment.s0       INFO Iteration 1 (using 10334 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.79204
+TbAlignment.s0       INFO Iteration 2 (using 8828 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78088
+TbAlignment.s0       INFO Iteration 3 (using 8821 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78087
+TbAlignment.s0       INFO Iteration 4 (using 8821 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78087
+TbAlignment.s0       INFO Iteration 5 (using 8821 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78087
+TbAlignment.s0       INFO Iteration 6 (using 8821 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78087
+TbAlignment.s0       INFO Iteration 7 (using 8821 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78087
+TbAlignment.s0       INFO Iteration 8 (using 8821 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78087
+TbAlignment.s0       INFO Iteration 9 (using 8821 tracks)
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO  Result of fit for global parameters
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO    I    Difference    Last step      Error        Pull     Global corr.
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO    0     0.000165     0.000000      0.00029      0.00165      0.98354
+TbAlignment.s0       INFO    1     0.000074     0.000000      0.00014      0.00074      0.93508
+TbAlignment.s0       INFO    2    -0.000083    -0.000000      0.00017     -0.00083      0.95728
+TbAlignment.s0       INFO    3    -0.000231    -0.000000      0.00030     -0.00231      0.98790
+TbAlignment.s0       INFO    4     0.000018     0.000000      0.00026      0.00018      0.98303
+TbAlignment.s0       INFO    5     0.000084     0.000000      0.00021      0.00084      0.97359
+TbAlignment.s0       INFO    6    -0.000064    -0.000000      0.00018     -0.00064      0.96029
+TbAlignment.s0       INFO    7     0.000038     0.000000      0.00026      0.00038      0.97920
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO    8    -0.000643    -0.000000      0.00120     -0.00643      0.99906
+TbAlignment.s0       INFO    9    -0.000204    -0.000000      0.00046     -0.00204      0.99415
+TbAlignment.s0       INFO   10     0.000277     0.000000      0.00051      0.00277      0.99551
+TbAlignment.s0       INFO   11     0.000696     0.000000      0.00129      0.00696      0.99933
+TbAlignment.s0       INFO   12     0.000236     0.000000      0.00075      0.00236      0.99803
+TbAlignment.s0       INFO   13     0.000060    -0.000000      0.00032      0.00060      0.98879
+TbAlignment.s0       INFO   14    -0.000031     0.000000      0.00023     -0.00031      0.97642
+TbAlignment.s0       INFO   15    -0.000392    -0.000000      0.00096     -0.00392      0.99851
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO   16          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   17          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   18          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   19          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   20          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   21          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   22          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   23          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO   24    -0.001461    -0.000000      0.00066     -0.14646      0.98034
+TbAlignment.s0       INFO   25    -0.001289    -0.000000      0.00064     -0.12915      0.97960
+TbAlignment.s0       INFO   26    -0.001111    -0.000000      0.00062     -0.11132      0.98457
+TbAlignment.s0       INFO   27    -0.001009    -0.000000      0.00060     -0.10113      0.98461
+TbAlignment.s0       INFO   28     0.001023     0.000000      0.00054      0.10249      0.99553
+TbAlignment.s0       INFO   29     0.001130     0.000000      0.00058      0.11320      0.99649
+TbAlignment.s0       INFO   30     0.001235     0.000000      0.00066      0.12375      0.99548
+TbAlignment.s0       INFO   31     0.001483     0.000000      0.00075      0.14868      0.99675
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO   32     0.000883     0.000000      0.00086      0.08866      0.98852
+TbAlignment.s0       INFO   33     0.000712     0.000000      0.00073      0.07138      0.98461
+TbAlignment.s0       INFO   34     0.000446     0.000000      0.00054      0.04468      0.97995
+TbAlignment.s0       INFO   35     0.000298     0.000000      0.00043      0.02985      0.96879
+TbAlignment.s0       INFO   36    -0.000446    -0.000000      0.00053     -0.04469      0.99540
+TbAlignment.s0       INFO   37    -0.000539    -0.000000      0.00057     -0.05397      0.99638
+TbAlignment.s0       INFO   38    -0.000626    -0.000000      0.00068     -0.06273      0.99574
+TbAlignment.s0       INFO   39    -0.000729    -0.000000      0.00077     -0.07309      0.99693
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO   40    -0.000300    -0.000000      0.00075     -0.03010      0.99996
+TbAlignment.s0       INFO   41    -0.000230    -0.000000      0.00061     -0.02306      0.99995
+TbAlignment.s0       INFO   42    -0.000150    -0.000000      0.00049     -0.01498      0.99993
+TbAlignment.s0       INFO   43    -0.000092     0.000000      0.00039     -0.00925      0.99990
+TbAlignment.s0       INFO   44     0.000144     0.000000      0.00040      0.01440      0.99993
+TbAlignment.s0       INFO   45     0.000169     0.000000      0.00049      0.01694      0.99995
+TbAlignment.s0       INFO   46     0.000213     0.000000      0.00062      0.02137      0.99996
+TbAlignment.s0       INFO   47     0.000246     0.000000      0.00074      0.02467      0.99997
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO 
+TbAlignment.s0       INFO             * o o                   o      
+TbAlignment.s0       INFO               o o                   o      
+TbAlignment.s0       INFO    o ooooo  o o o  oo  ooo   oo   ooo  oo  
+TbAlignment.s0       INFO     o  o  o o o o o  o o  o o  o o  o o  o 
+TbAlignment.s0       INFO     o  o  o o o o oooo o  o oooo o  o oooo 
+TbAlignment.s0       INFO     o  o  o o o o o    ooo  o    o  o o    
+TbAlignment.s0       INFO     o  o  o o o o  oo  o     oo   ooo  oo ++ ends.
+TbAlignment.s0       INFO                        o                   
+TbAlignment.s0       INFO 
+TbAlignment.s0       INFO Convergence: 0.00040
+TbAlignment.s0       INFO Updating geometry...
+TbAlignment.s0       INFO                                            
+TbAlignment.s0       INFO             * o o                   o      
+TbAlignment.s0       INFO               o o                   o      
+TbAlignment.s0       INFO    o ooooo  o o o  oo  ooo   oo   ooo  oo  
+TbAlignment.s0       INFO     o  o  o o o o o  o o  o o  o o  o o  o 
+TbAlignment.s0       INFO     o  o  o o o o oooo o  o oooo o  o oooo 
+TbAlignment.s0       INFO     o  o  o o o o o    ooo  o    o  o o    
+TbAlignment.s0       INFO     o  o  o o o o  oo  o     oo   ooo  oo  ++ starts
+TbAlignment.s0       INFO                                            
+TbAlignment.s0       INFO Feeding Millepede with 10334 tracks...
+TbAlignment.s0       INFO Determining global parameters...
+TbAlignment.s0       INFO Iteration 1 (using 10334 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.79207
+TbAlignment.s0       INFO Iteration 2 (using 8828 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78090
+TbAlignment.s0       INFO Iteration 3 (using 8821 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78088
+TbAlignment.s0       INFO Iteration 4 (using 8821 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78088
+TbAlignment.s0       INFO Iteration 5 (using 8821 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78088
+TbAlignment.s0       INFO Iteration 6 (using 8821 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78088
+TbAlignment.s0       INFO Iteration 7 (using 8821 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78088
+TbAlignment.s0       INFO Iteration 8 (using 8821 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78088
+TbAlignment.s0       INFO Iteration 9 (using 8821 tracks)
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO  Result of fit for global parameters
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO    I    Difference    Last step      Error        Pull     Global corr.
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO    0    -0.000033     0.000000      0.00029     -0.00033      0.98414
+TbAlignment.s0       INFO    1    -0.000011     0.000000      0.00014     -0.00011      0.93599
+TbAlignment.s0       INFO    2     0.000014    -0.000000      0.00017      0.00014      0.95818
+TbAlignment.s0       INFO    3     0.000040    -0.000000      0.00031      0.00040      0.98840
+TbAlignment.s0       INFO    4     0.000006     0.000000      0.00026      0.00006      0.98317
+TbAlignment.s0       INFO    5    -0.000012     0.000000      0.00021     -0.00012      0.97377
+TbAlignment.s0       INFO    6     0.000009    -0.000000      0.00018      0.00009      0.96062
+TbAlignment.s0       INFO    7    -0.000014     0.000000      0.00026     -0.00014      0.97953
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO    8     0.000067    -0.000000      0.00120      0.00067      0.99906
+TbAlignment.s0       INFO    9     0.000021    -0.000000      0.00046      0.00021      0.99415
+TbAlignment.s0       INFO   10    -0.000029     0.000000      0.00051     -0.00029      0.99551
+TbAlignment.s0       INFO   11    -0.000076     0.000000      0.00129     -0.00076      0.99933
+TbAlignment.s0       INFO   12    -0.000018    -0.000000      0.00075     -0.00018      0.99804
+TbAlignment.s0       INFO   13     0.000001    -0.000000      0.00032      0.00001      0.98882
+TbAlignment.s0       INFO   14     0.000001     0.000000      0.00023      0.00001      0.97649
+TbAlignment.s0       INFO   15     0.000033    -0.000000      0.00096      0.00033      0.99851
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO   16          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   17          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   18          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   19          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   20          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   21          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   22          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   23          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO   24     0.000226    -0.000000      0.00067      0.02267      0.98090
+TbAlignment.s0       INFO   25     0.000199    -0.000000      0.00065      0.01997      0.98017
+TbAlignment.s0       INFO   26     0.000175    -0.000000      0.00063      0.01749      0.98511
+TbAlignment.s0       INFO   27     0.000156    -0.000000      0.00061      0.01563      0.98518
+TbAlignment.s0       INFO   28    -0.000137     0.000000      0.00055     -0.01368      0.99575
+TbAlignment.s0       INFO   29    -0.000176     0.000000      0.00059     -0.01764      0.99667
+TbAlignment.s0       INFO   30    -0.000199     0.000000      0.00067     -0.01992      0.99577
+TbAlignment.s0       INFO   31    -0.000245     0.000000      0.00077     -0.02452      0.99698
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO   32    -0.000145     0.000000      0.00089     -0.01460      0.98894
+TbAlignment.s0       INFO   33    -0.000123     0.000000      0.00075     -0.01233      0.98511
+TbAlignment.s0       INFO   34    -0.000088     0.000000      0.00055     -0.00881      0.98054
+TbAlignment.s0       INFO   35    -0.000065     0.000000      0.00043     -0.00651      0.96949
+TbAlignment.s0       INFO   36     0.000079    -0.000000      0.00054      0.00795      0.99565
+TbAlignment.s0       INFO   37     0.000096    -0.000000      0.00058      0.00965      0.99658
+TbAlignment.s0       INFO   38     0.000111    -0.000000      0.00069      0.01113      0.99601
+TbAlignment.s0       INFO   39     0.000135    -0.000000      0.00079      0.01350      0.99714
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO   40     0.000027    -0.000000      0.00075      0.00274      0.99996
+TbAlignment.s0       INFO   41     0.000020    -0.000000      0.00061      0.00203      0.99995
+TbAlignment.s0       INFO   42     0.000012     0.000000      0.00049      0.00117      0.99993
+TbAlignment.s0       INFO   43     0.000005     0.000000      0.00039      0.00054      0.99990
+TbAlignment.s0       INFO   44    -0.000013    -0.000000      0.00040     -0.00126      0.99993
+TbAlignment.s0       INFO   45    -0.000014    -0.000000      0.00049     -0.00142      0.99995
+TbAlignment.s0       INFO   46    -0.000018    -0.000000      0.00062     -0.00179      0.99996
+TbAlignment.s0       INFO   47    -0.000020    -0.000000      0.00074     -0.00200      0.99997
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO 
+TbAlignment.s0       INFO             * o o                   o      
+TbAlignment.s0       INFO               o o                   o      
+TbAlignment.s0       INFO    o ooooo  o o o  oo  ooo   oo   ooo  oo  
+TbAlignment.s0       INFO     o  o  o o o o o  o o  o o  o o  o o  o 
+TbAlignment.s0       INFO     o  o  o o o o oooo o  o oooo o  o oooo 
+TbAlignment.s0       INFO     o  o  o o o o o    ooo  o    o  o o    
+TbAlignment.s0       INFO     o  o  o o o o  oo  o     oo   ooo  oo ++ ends.
+TbAlignment.s0       INFO                        o                   
+TbAlignment.s0       INFO 
+TbAlignment.s0       INFO Convergence: 0.00006
+TbAlignment.s0       INFO Updating geometry...
+TbAlignment.s0       INFO                                            
+TbAlignment.s0       INFO             * o o                   o      
+TbAlignment.s0       INFO               o o                   o      
+TbAlignment.s0       INFO    o ooooo  o o o  oo  ooo   oo   ooo  oo  
+TbAlignment.s0       INFO     o  o  o o o o o  o o  o o  o o  o o  o 
+TbAlignment.s0       INFO     o  o  o o o o oooo o  o oooo o  o oooo 
+TbAlignment.s0       INFO     o  o  o o o o o    ooo  o    o  o o    
+TbAlignment.s0       INFO     o  o  o o o o  oo  o     oo   ooo  oo  ++ starts
+TbAlignment.s0       INFO                                            
+TbAlignment.s0       INFO Feeding Millepede with 10334 tracks...
+TbAlignment.s0       INFO Determining global parameters...
+TbAlignment.s0       INFO Iteration 1 (using 10334 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.79206
+TbAlignment.s0       INFO Iteration 2 (using 8828 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78090
+TbAlignment.s0       INFO Iteration 3 (using 8821 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78088
+TbAlignment.s0       INFO Iteration 4 (using 8821 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78088
+TbAlignment.s0       INFO Iteration 5 (using 8821 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78088
+TbAlignment.s0       INFO Iteration 6 (using 8821 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78088
+TbAlignment.s0       INFO Iteration 7 (using 8821 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78088
+TbAlignment.s0       INFO Iteration 8 (using 8821 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78088
+TbAlignment.s0       INFO Iteration 9 (using 8821 tracks)
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO  Result of fit for global parameters
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO    I    Difference    Last step      Error        Pull     Global corr.
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO    0     0.000009     0.000000      0.00029      0.00009      0.98403
+TbAlignment.s0       INFO    1     0.000003     0.000000      0.00014      0.00003      0.93583
+TbAlignment.s0       INFO    2    -0.000004    -0.000000      0.00017     -0.00004      0.95802
+TbAlignment.s0       INFO    3    -0.000011    -0.000000      0.00031     -0.00011      0.98831
+TbAlignment.s0       INFO    4    -0.000002     0.000000      0.00026     -0.00002      0.98315
+TbAlignment.s0       INFO    5     0.000002     0.000000      0.00021      0.00002      0.97374
+TbAlignment.s0       INFO    6    -0.000002    -0.000000      0.00018     -0.00002      0.96057
+TbAlignment.s0       INFO    7     0.000004     0.000000      0.00026      0.00004      0.97947
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO    8    -0.000010    -0.000000      0.00120     -0.00010      0.99906
+TbAlignment.s0       INFO    9    -0.000003    -0.000000      0.00046     -0.00003      0.99415
+TbAlignment.s0       INFO   10     0.000005     0.000000      0.00051      0.00005      0.99551
+TbAlignment.s0       INFO   11     0.000011     0.000000      0.00129      0.00011      0.99933
+TbAlignment.s0       INFO   12    -0.000001    -0.000000      0.00075     -0.00001      0.99803
+TbAlignment.s0       INFO   13    -0.000003    -0.000000      0.00032     -0.00003      0.98881
+TbAlignment.s0       INFO   14     0.000001     0.000000      0.00023      0.00001      0.97647
+TbAlignment.s0       INFO   15    -0.000002    -0.000000      0.00096     -0.00002      0.99851
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO   16          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   17          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   18          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   19          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   20          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   21          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   22          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   23          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO   24    -0.000048    -0.000000      0.00067     -0.00482      0.98079
+TbAlignment.s0       INFO   25    -0.000044    -0.000000      0.00065     -0.00437      0.98006
+TbAlignment.s0       INFO   26    -0.000040    -0.000000      0.00063     -0.00404      0.98501
+TbAlignment.s0       INFO   27    -0.000037    -0.000000      0.00061     -0.00372      0.98507
+TbAlignment.s0       INFO   28     0.000031     0.000000      0.00055      0.00315      0.99571
+TbAlignment.s0       INFO   29     0.000039     0.000000      0.00058      0.00389      0.99664
+TbAlignment.s0       INFO   30     0.000044     0.000000      0.00067      0.00443      0.99571
+TbAlignment.s0       INFO   31     0.000055     0.000000      0.00076      0.00549      0.99694
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO   32     0.000036     0.000000      0.00088      0.00357      0.98887
+TbAlignment.s0       INFO   33     0.000030     0.000000      0.00075      0.00299      0.98502
+TbAlignment.s0       INFO   34     0.000021     0.000000      0.00055      0.00208      0.98044
+TbAlignment.s0       INFO   35     0.000015     0.000000      0.00043      0.00150      0.96936
+TbAlignment.s0       INFO   36    -0.000020    -0.000000      0.00054     -0.00199      0.99561
+TbAlignment.s0       INFO   37    -0.000023    -0.000000      0.00058     -0.00230      0.99655
+TbAlignment.s0       INFO   38    -0.000027    -0.000000      0.00069     -0.00267      0.99597
+TbAlignment.s0       INFO   39    -0.000032    -0.000000      0.00078     -0.00318      0.99710
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO   40    -0.000002    -0.000000      0.00075     -0.00017      0.99996
+TbAlignment.s0       INFO   41    -0.000001    -0.000000      0.00061     -0.00009      0.99995
+TbAlignment.s0       INFO   42     0.000001     0.000000      0.00049      0.00005      0.99993
+TbAlignment.s0       INFO   43     0.000001     0.000000      0.00039      0.00014      0.99990
+TbAlignment.s0       INFO   44     0.000000     0.000000      0.00040      0.00003      0.99993
+TbAlignment.s0       INFO   45     0.000000     0.000000      0.00049      0.00002      0.99995
+TbAlignment.s0       INFO   46     0.000000     0.000000      0.00062      0.00002      0.99996
+TbAlignment.s0       INFO   47    -0.000000    -0.000000      0.00074     -0.00001      0.99997
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO 
+TbAlignment.s0       INFO             * o o                   o      
+TbAlignment.s0       INFO               o o                   o      
+TbAlignment.s0       INFO    o ooooo  o o o  oo  ooo   oo   ooo  oo  
+TbAlignment.s0       INFO     o  o  o o o o o  o o  o o  o o  o o  o 
+TbAlignment.s0       INFO     o  o  o o o o oooo o  o oooo o  o oooo 
+TbAlignment.s0       INFO     o  o  o o o o o    ooo  o    o  o o    
+TbAlignment.s0       INFO     o  o  o o o o  oo  o     oo   ooo  oo ++ ends.
+TbAlignment.s0       INFO                        o                   
+TbAlignment.s0       INFO 
+TbAlignment.s0       INFO Convergence: 0.00001
+TbAlignment.s0       INFO Updating geometry...
+TbAlignment.s0       INFO                                            
+TbAlignment.s0       INFO             * o o                   o      
+TbAlignment.s0       INFO               o o                   o      
+TbAlignment.s0       INFO    o ooooo  o o o  oo  ooo   oo   ooo  oo  
+TbAlignment.s0       INFO     o  o  o o o o o  o o  o o  o o  o o  o 
+TbAlignment.s0       INFO     o  o  o o o o oooo o  o oooo o  o oooo 
+TbAlignment.s0       INFO     o  o  o o o o o    ooo  o    o  o o    
+TbAlignment.s0       INFO     o  o  o o o o  oo  o     oo   ooo  oo  ++ starts
+TbAlignment.s0       INFO                                            
+TbAlignment.s0       INFO Feeding Millepede with 10334 tracks...
+TbAlignment.s0       INFO Determining global parameters...
+TbAlignment.s0       INFO Iteration 1 (using 10334 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.79206
+TbAlignment.s0       INFO Iteration 2 (using 8828 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78090
+TbAlignment.s0       INFO Iteration 3 (using 8821 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78088
+TbAlignment.s0       INFO Iteration 4 (using 8821 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78088
+TbAlignment.s0       INFO Iteration 5 (using 8821 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78088
+TbAlignment.s0       INFO Iteration 6 (using 8821 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78088
+TbAlignment.s0       INFO Iteration 7 (using 8821 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78088
+TbAlignment.s0       INFO Iteration 8 (using 8821 tracks)
+TbAlignment.s0       INFO Chi2 / DOF after re-fit: 1.78088
+TbAlignment.s0       INFO Iteration 9 (using 8821 tracks)
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO  Result of fit for global parameters
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO    I    Difference    Last step      Error        Pull     Global corr.
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO    0    -0.000002     0.000000      0.00029     -0.00002      0.98405
+TbAlignment.s0       INFO    1    -0.000001     0.000000      0.00014     -0.00001      0.93587
+TbAlignment.s0       INFO    2     0.000001    -0.000000      0.00017      0.00001      0.95806
+TbAlignment.s0       INFO    3     0.000002    -0.000000      0.00031      0.00002      0.98833
+TbAlignment.s0       INFO    4     0.000001     0.000000      0.00026      0.00001      0.98315
+TbAlignment.s0       INFO    5    -0.000000     0.000000      0.00021     -0.00000      0.97375
+TbAlignment.s0       INFO    6     0.000000    -0.000000      0.00018      0.00000      0.96058
+TbAlignment.s0       INFO    7    -0.000001     0.000000      0.00026     -0.00001      0.97949
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO    8     0.000001    -0.000000      0.00120      0.00001      0.99906
+TbAlignment.s0       INFO    9     0.000000    -0.000000      0.00046      0.00000      0.99415
+TbAlignment.s0       INFO   10    -0.000001     0.000000      0.00051     -0.00001      0.99551
+TbAlignment.s0       INFO   11    -0.000001     0.000000      0.00129     -0.00001      0.99933
+TbAlignment.s0       INFO   12     0.000001    -0.000000      0.00075      0.00001      0.99803
+TbAlignment.s0       INFO   13     0.000001    -0.000000      0.00032      0.00001      0.98881
+TbAlignment.s0       INFO   14    -0.000000     0.000000      0.00023     -0.00000      0.97648
+TbAlignment.s0       INFO   15    -0.000000    -0.000000      0.00096     -0.00000      0.99851
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO   16          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   17          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   18          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   19          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   20          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   21          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   22          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO   23          OFF          OFF          OFF          OFF          OFF
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO   24     0.000011    -0.000000      0.00067      0.00107      0.98081
+TbAlignment.s0       INFO   25     0.000010    -0.000000      0.00065      0.00097      0.98008
+TbAlignment.s0       INFO   26     0.000009    -0.000000      0.00063      0.00088      0.98503
+TbAlignment.s0       INFO   27     0.000008    -0.000000      0.00061      0.00080      0.98510
+TbAlignment.s0       INFO   28    -0.000007     0.000000      0.00055     -0.00070      0.99572
+TbAlignment.s0       INFO   29    -0.000008     0.000000      0.00058     -0.00085      0.99665
+TbAlignment.s0       INFO   30    -0.000010     0.000000      0.00067     -0.00097      0.99573
+TbAlignment.s0       INFO   31    -0.000012     0.000000      0.00076     -0.00120      0.99695
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO   32    -0.000007     0.000000      0.00088     -0.00073      0.98888
+TbAlignment.s0       INFO   33    -0.000006     0.000000      0.00075     -0.00061      0.98504
+TbAlignment.s0       INFO   34    -0.000004     0.000000      0.00055     -0.00043      0.98046
+TbAlignment.s0       INFO   35    -0.000003     0.000000      0.00043     -0.00031      0.96939
+TbAlignment.s0       INFO   36     0.000004    -0.000000      0.00054      0.00041      0.99562
+TbAlignment.s0       INFO   37     0.000005    -0.000000      0.00058      0.00047      0.99656
+TbAlignment.s0       INFO   38     0.000005    -0.000000      0.00069      0.00055      0.99598
+TbAlignment.s0       INFO   39     0.000007    -0.000000      0.00078      0.00066      0.99711
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO   40    -0.000000    -0.000000      0.00075     -0.00002      0.99996
+TbAlignment.s0       INFO   41    -0.000000    -0.000000      0.00061     -0.00003      0.99995
+TbAlignment.s0       INFO   42    -0.000000    -0.000000      0.00049     -0.00005      0.99993
+TbAlignment.s0       INFO   43    -0.000001     0.000000      0.00039     -0.00006      0.99990
+TbAlignment.s0       INFO   44     0.000000     0.000000      0.00040      0.00002      0.99993
+TbAlignment.s0       INFO   45     0.000000     0.000000      0.00049      0.00003      0.99995
+TbAlignment.s0       INFO   46     0.000000     0.000000      0.00062      0.00004      0.99996
+TbAlignment.s0       INFO   47     0.000001     0.000000      0.00074      0.00006      0.99997
+TbAlignment.s0       INFO -------------------------------------------------------------------------------------
+TbAlignment.s0       INFO 
+TbAlignment.s0       INFO             * o o                   o      
+TbAlignment.s0       INFO               o o                   o      
+TbAlignment.s0       INFO    o ooooo  o o o  oo  ooo   oo   ooo  oo  
+TbAlignment.s0       INFO     o  o  o o o o o  o o  o o  o o  o o  o 
+TbAlignment.s0       INFO     o  o  o o o o oooo o  o oooo o  o oooo 
+TbAlignment.s0       INFO     o  o  o o o o o    ooo  o    o  o o    
+TbAlignment.s0       INFO     o  o  o o o o  oo  o     oo   ooo  oo ++ ends.
+TbAlignment.s0       INFO                        o                   
+TbAlignment.s0       INFO 
+TbAlignment.s0       INFO Convergence: 0.00000
+TbAlignment.s0       INFO Updating geometry...
+EventLoopMgr      SUCCESS Terminating event processing loop due to scheduled stop
+ApplicationMgr       INFO Application Manager Stopped successfully
+TbEventBuilder       INFO Plane  0:      7103600 packets in file,         4466 hits in cache
+TbEventBuilder       INFO Plane  1:      6064648 packets in file,         3775 hits in cache
+TbEventBuilder       INFO Plane  2:      6492004 packets in file,         4013 hits in cache
+TbEventBuilder       INFO Plane  3:      6557011 packets in file,         4740 hits in cache
+TbEventBuilder       INFO Plane  4:     22003178 packets in file,        12613 hits in cache
+TbEventBuilder       INFO Plane  5:      6616512 packets in file,         4227 hits in cache
+TbEventBuilder       INFO Plane  6:      6256693 packets in file,         4015 hits in cache
+TbEventBuilder       INFO Plane  7:      6298052 packets in file,         4097 hits in cache
+TbEventBuilder       INFO Plane  8:      6190414 packets in file,         3891 hits in cache
+TbEventBuilder       INFO Fraction of data read: 0.00876674
+TbEventBuilder       INFO Number of packets lost: 0
+TbEventBuilder       INFO Unknown packets: 373
+TbEventBuilder       INFO Skipped 1961 noise events.
+TbClustering      SUCCESS Number of counters : 9
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "NumberOfClusters0"                             |        36 |      14064 |     390.67 |     247.79 |      1.0000 |      778.00 |
+ | "NumberOfClusters1"                             |        36 |      14127 |     392.42 |     251.75 |      1.0000 |      795.00 |
+ | "NumberOfClusters2"                             |        36 |      14275 |     396.53 |     253.90 |      1.0000 |      802.00 |
+ | "NumberOfClusters3"                             |        36 |      14413 |     400.36 |     257.82 |      1.0000 |      810.00 |
+ | "NumberOfClusters4"                             |        36 |       4080 |     113.33 |     72.239 |      0.0000 |      244.00 |
+ | "NumberOfClusters5"                             |        36 |      16099 |     447.19 |     287.03 |      1.0000 |      903.00 |
+ | "NumberOfClusters6"                             |        36 |      15491 |     430.31 |     275.64 |      1.0000 |      862.00 |
+ | "NumberOfClusters7"                             |        36 |      15212 |     422.56 |     269.76 |      1.0000 |      842.00 |
+ | "NumberOfClusters8"                             |        36 |      15040 |     417.78 |     268.17 |      1.0000 |      843.00 |
+TbSimpleTracking  SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "NumberOfTracks"                                |        36 |      13965 |     387.92 |     248.52 |      1.0000 |      791.00 |
+TbAlignment          INFO Writing alignment output file to Alignment_out.dat
+TbHitMonitor      SUCCESS Booked 45 Histogram(s) : 1D=36 2D=9 
+TbClusterPlots    SUCCESS Booked 247 Histogram(s) : 1D=182 2D=65 
+TbClusterPlots    SUCCESS Number of counters : 9
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ |*"effFractionAssociated0"                        |     14064 |      12194 |(  86.7036 +- 0.286306 )%|   -------   |   -------   |
+ |*"effFractionAssociated1"                        |     14127 |      13965 |(  98.8533 +- 0.0895784)%|   -------   |   -------   |
+ |*"effFractionAssociated2"                        |     14275 |      13375 |(  93.6953 +- 0.203425 )%|   -------   |   -------   |
+ |*"effFractionAssociated3"                        |     14413 |      13355 |(  92.6594 +- 0.217237 )%|   -------   |   -------   |
+ |*"effFractionAssociated4"                        |      4080 |          0 |(  0.00000 +- 0.0245098)%|   -------   |   -------   |
+ |*"effFractionAssociated5"                        |     16099 |      13320 |(  82.7381 +- 0.297850 )%|   -------   |   -------   |
+ |*"effFractionAssociated6"                        |     15491 |      13309 |(  85.9144 +- 0.279499 )%|   -------   |   -------   |
+ |*"effFractionAssociated7"                        |     15212 |      13291 |(  87.3718 +- 0.269317 )%|   -------   |   -------   |
+ |*"effFractionAssociated8"                        |     15040 |      13284 |(  88.3245 +- 0.261851 )%|   -------   |   -------   |
+TbTrackPlots      SUCCESS Booked 214 Histogram(s) : 1D=106 2D=99 1DProf=9 
+TbTriggerMonitor  SUCCESS Booked 19 Histogram(s) : 1D=19 
+ToolSvc              INFO Removing all tools created by ToolSvc
+TimingAuditor.T...   INFO --------------------------------------------------------------------------------------------------
+TimingAuditor.T...   INFO This machine has a speed about   2.71 times the speed of a 2.8 GHz Xeon.
+TimingAuditor.T...   INFO Algorithm          (millisec) |    <user> |   <clock> |      min       max | entries | total (s) |
+TimingAuditor.T...   INFO --------------------------------------------------------------------------------------------------
+TimingAuditor.T...   INFO EVENT LOOP                    |   954.938 |   974.860 |    0.821   32348.9 |      36 |    35.095 |
+TimingAuditor.T...   INFO  KeplerSequencer              |   954.633 |   974.483 |    0.790   32337.6 |      36 |    35.081 |
+TimingAuditor.T...   INFO   Telescope                   |   914.916 |   932.157 |    0.409   32279.9 |      36 |    33.558 |
+TimingAuditor.T...   INFO    TbEventBuilder             |     7.999 |     8.227 |    0.139      37.8 |      36 |     0.296 |
+TimingAuditor.T...   INFO    TbClustering               |    14.637 |    15.324 |    0.094     110.2 |      36 |     0.552 |
+TimingAuditor.T...   INFO    Tracking                   |     2.333 |     2.317 |    0.035       6.8 |      36 |     0.083 |
+TimingAuditor.T...   INFO     TbSimpleTracking          |     2.333 |     2.308 |    0.030       6.8 |      36 |     0.083 |
+TimingAuditor.T...   INFO    TbTriggerAssociator        |     0.028 |     0.040 |    0.018       0.1 |      36 |     0.001 |
+TimingAuditor.T...   INFO    TbClusterAssociator        |     0.000 |     0.006 |    0.002       0.0 |      36 |     0.000 |
+TimingAuditor.T...   INFO    TbAlignment                |   889.893 |   906.207 |    0.009   32256.8 |      36 |    32.623 |
+TimingAuditor.T...   INFO   Monitoring                  |    39.688 |    42.302 |    0.372      85.9 |      36 |     1.523 |
+TimingAuditor.T...   INFO    TbHitMonitor               |     3.111 |     3.488 |    0.043       8.0 |      36 |     0.126 |
+TimingAuditor.T...   INFO    TbClusterPlots             |     9.693 |     9.909 |    0.126      21.1 |      36 |     0.357 |
+TimingAuditor.T...   INFO    TbTrackPlots               |    26.718 |    28.796 |    0.162      61.9 |      36 |     1.037 |
+TimingAuditor.T...   INFO    TbTriggerMonitor           |     0.028 |     0.035 |    0.020       0.1 |      36 |     0.001 |
+TimingAuditor.T...   INFO    TbDUTMonitor               |     0.083 |     0.035 |    0.004       0.1 |      36 |     0.001 |
+TimingAuditor.T...   INFO   Output                      |     0.000 |     0.012 |    0.001       0.3 |      36 |     0.000 |
+TimingAuditor.T...   INFO --------------------------------------------------------------------------------------------------
+ApplicationMgr       INFO Application Manager Finalized successfully
+ApplicationMgr       INFO Application Manager Terminated successfully with a user requested ScheduledStop

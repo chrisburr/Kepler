@@ -1,0 +1,21 @@
+<?xml version="1.0" ?><!DOCTYPE extension  PUBLIC '-//QM/2.3/Extension//EN'  'http://www.codesourcery.com/qm/dtds/2.3/-//qm/2.3/extension//en.dtd'>
+<extension class="GaudiTest.GaudiExeTest" kind="test">
+  <argument name="program"><text>gaudirun.py</text></argument>
+  <argument name="options"><text>
+from Gaudi.Configuration import *
+from Configurables import Kepler
+Kepler().InputFiles = ["/afs/cern.ch/work/h/hschindl/public/Kepler/Run1024/"]
+Kepler().AlignmentFile = "/afs/cern.ch/work/h/hschindl/public/Kepler/Alignment1024.dat"
+Kepler().PixelConfigFile = ["/afs/cern.ch/work/h/hschindl/public/Kepler/PixelConfig.dat"]
+Kepler().TimingConfigFile = "/afs/cern.ch/work/h/hschindl/public/Kepler/TimingConfig.dat"
+Kepler().EvtMax = 100
+from Configurables import TbEventBuilder
+TbEventBuilder().MinPlanesWithHits = 3
+TbEventBuilder().PrintHeader = True
+  </text></argument>
+  <argument name="reference"><text>$KEPLERROOT/tests/refs/testJuly2014.ref</text></argument>
+  <argument name="validator"><text>
+from Kepler.QMTest.KeplerExclusions import preprocessor
+validateWithReference(preproc = preprocessor)
+  </text></argument>
+</extension>

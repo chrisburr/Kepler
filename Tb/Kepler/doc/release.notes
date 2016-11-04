@@ -1,0 +1,30 @@
+<PRE>
+Package: Tb/Kepler
+Package Coordinator: Tim Evans and Heinrich Schindler
+Purpose: testbeam analysis program
+</PRE>
+
+<H1><A NAME=v3r0>2015-05-19 Kepler v3r0</A></H1>
+
+ - Add Ganga plugin.
+ - Add TbClusterAssociator and TbDUTMonitor to Telescope/Monitoring sequence.
+
+<H1><A NAME=v2r1>2014-11-30 Kepler v2r1</A></H1>
+
+- New flag to switch on/off tracking.
+- New sequence UserAlgorithms.
+- Updated QMTest.
+ 
+<H1><A NAME=v2r0>2014-08-19 Kepler v2r0</A></H1>
+
+- Release of the application as used at the end of the July/August PS testbeam
+  . Add flags to switch on/off alignment, monitoring, and tuple output.
+  . Add property PixelConfigFile.
+  . Add TbPixelSvc and TbTimingSvc to services.
+  . Add option files for Minuit and Millepede alignment.
+  . Add directory Scripts with post-processing analysis scripts. 
+  . QMTest based on real data.
+
+<H1><A NAME=v1r0>2014-05-30 Kepler v1r0</A></H1>
+
+- First version of Timepix3 telescope reconstruction application

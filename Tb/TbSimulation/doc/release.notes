@@ -1,0 +1,39 @@
+!-----------------------------------------------------------------------------
+! Package     : Tb/TbSimulation
+! Responsible :
+! Purpose     : Algorithms for producing simulated testbeam data
+!-----------------------------------------------------------------------------
+
+! 2016-07-21 - Heinrich Schindler
+ - Follow change in TbEvent (r207560).
+
+!======================= TbSimulation v1r3 2015-05-19 ========================
+
+! 2015-03-24 - Heinrich Schindler
+ - Follow change in TbEvent (r185837).
+
+! 2015-03-09 - Heinrich Schindler
+ - Follow change in TbGeometrySvc (r185107).
+
+! 2014-12-12 - Heinrich Schindler
+ - Follow renaming of TbHit::plane to TbHit::device.
+
+!======================= TbSimulation v1r2 2014-11-30 ========================
+
+! 2014-10-12 - Panos Tsopelas
+ - Updated TrackFitter to generate random scattered tracks  
+   and fit them with a Kalman fit.
+
+!======================= TbSimulation v1r1 2014-08-18 ========================
+
+! 2014-07-08 - Tim Evans
+ - Changes to reflect changes in TbEvent
+
+! 2014-06-06 - Heinrich Schindler
+ - TbTrackFitter: remove unused member m_tracks.
+
+!======================= TbSimulation v1r0 2014-05-30 ========================
+
+! 2014-05-29 - Heinrich Schindler
+ - Initial import
+ - Move TbTestMC and TbTrackFitter from Tb/TbAlgorithms to this package.

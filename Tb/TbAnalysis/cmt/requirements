@@ -1,0 +1,16 @@
+package TbAnalysis 
+version v1r1
+
+branches          cmt doc src 
+include_path      none
+
+use  GaudiAlg     v*
+use  TbEvent      v*  Tb
+use  TbKernel     v*  Tb
+
+#============================================================================
+# Component library building rule
+#============================================================================
+library          TbAnalysis    ../src/*.cpp -import=AIDA 
+apply_pattern    component_library library=TbAnalysis
+macro_append ROOT_linkopts " -lMinuit -lHist -lPhysics"

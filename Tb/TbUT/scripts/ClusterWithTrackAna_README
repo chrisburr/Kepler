@@ -1,0 +1,51 @@
+//
+// S. Blusk, Oct 6, 2015
+// Updated April 21, 2016 -- S. Blusk
+
+This is a simple script to loop over a TB run that has ben processed by TbUT and has tracks added to the ntuple.
+To run interactively:
+
+< 
+
+In you home area, create your own work area:
+> mkdir TBANAL/
+> cd TBANAL
+>   mkdir Output
+>   mkdir Plots/
+
+Set up ROOT environment (ROOT 5!) - code is not fully compliant with ROOT 6.
+>
+//> setenv CMTCONFIG x86_64-slc5-gcc46-opt
+
+
+
+LbLogin -c x86_64-slc6-gcc48-opt
+> SetupProject LHCb v36r2
+> root [0] .x runClusterWithTrackAna.C
+
+
+* Right now, it is set up to run over a file in the area:
+  const TString m_fileIndir = "/afs/cern.ch/work/s/sblusk/public/TB/";
+and it picks up the file in subdirectory: "BoardA6/", set with:
+  const TString m_board   = "A6";
+
+* Only the files defined in ClusterWithTrackAna.h will run, so if you grab a different
+file, you need to check it is a good run and in the list of files. As of April 21, 2016,
+only the fgood 2015 test beam runs are included.
+
+
+[*] A set of plot should pop up after the script runs, and an output ROOT file called histOutput.root is created.
+
+[*] Until we have a more refinced processing scheme, files that you want to test should be put in by hand into 
+ClusterWithTrackAna::getFileBase (follow the examples in there).
+
+[*] Input & output files directories are included in the Analysis_Inputs.h
+
+Once we have to process many runs, we should have a way of automatically providing the input file and the output file.
+This is being worked on...
+
+
+KNOWN ISSUES
+------------
+
+* Array stripGap[4] need to be updated to depend on the particular sensor. Right now, it's assumed no gaps for Type A, and same gaps for all type D.

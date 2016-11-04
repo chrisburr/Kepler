@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE gdd SYSTEM "gdd.dtd" >
+<gdd>
+  <package name = "TbEvent">
+    <class name = "TbCluster"
+           id = "4511"
+           author = "H. Schindler"
+           desc = "Generic cluster object for testbeam analysis"
+           serializers = "FALSE">
+      <location name = "Default" place = "Rec/Tb/Clusters"/>
+      <base name = "KeyedObject&lt;int&gt;"/>
+      &KeyedObject;
+      <import name = "Event/TbHit"/>
+
+      <constructor desc = 'Default constructor'
+                   initList = 'm_wx(1.), m_wy(1.), m_associated(false)'>
+        <code>
+  m_hits.reserve(10);
+        </code>
+      </constructor>
+  
+      <relation name = 'hits' 
+                type = 'LHCb::TbHit' 
+                desc = 'hits forming this cluster'
+                multiplicity = 'm'/>
+
+      <attribute name = "x"
+                 desc = "global x"
+                 type = "double"/>
+                    
+      <attribute name = "y"
+                 desc = "global y"
+                 type = "double"/>
+                 
+      <attribute name = "xErr"
+                 desc = "global x error"
+                 type = "double"/>
+                    
+      <attribute name = "yErr"
+                 desc = "global y error"
+                 type = "double"/>
+                 
+      <attribute name = "z"
+                 desc = "global z"
+                 type = "double"/>
+                 
+      <attribute name = "xloc"
+                 desc = "local x"
+                 type = "double"/>
+                 
+      <attribute name = "yloc"
+                 desc = "local y"
+                 type = "double"/>
+
+      <attribute name = "wx"
+                 desc = "weight in global x"
+                 type = "double"/>
+
+      <attribute name = "wy"
+                 desc = "weight in global y"
+                 type = "double"/>
+
+      <attribute name = "ToT"     
+                 desc = "time over threshold"
+                 type = "unsigned int"/> 
+
+      <attribute name = "charge"
+                 desc = "total charge (in electrons)"
+                 type = "double"/>
+                 
+      <attribute name = "plane"
+                 desc = "index of the telescope plane"
+                 type = "unsigned int"/>
+                 
+      <attribute name = "time"
+                 type = "uint64_t"
+                 desc = "global timestamp"/>
+
+      <attribute name = "htime"
+                 type = "double"
+                 desc = "local timestamp in ns"/>
+
+      <attribute name = "cols"
+                 type = "unsigned int"
+                 desc = "number of columns covered by the cluster"/>
+
+      <attribute name = "rows"
+                 type = "unsigned int"
+                 desc = "number of rows covered by the cluster"/>
+
+      <attribute name = "associated"
+                 desc = "flag for whether the cluster is part of a track"
+                 type = "bool"
+                 setMeth = "FALSE"/>
+     
+      <method name = "clone"
+              desc = "Clone the cluster without keeping the hits (you take ownership of the pointer)"
+              type = "LHCb::TbCluster*"
+              virtual = "TRUE"/>
+
+      <method name = "size"
+              desc = "Return the cluster size"
+              type = "unsigned int"
+              const = "TRUE">
+        <code>
+  return m_hits.size();
+        </code>
+      </method>
+ 
+      <method name = "setAssociated"
+              desc = "Set the cluster and its hits to be associated to a track"
+              argList = "const bool tracked">
+        <code>
+  m_associated = tracked;
+  for (auto it = m_hits.begin(), end = m_hits.end(); it != end; ++it) {
+    (*it)->setAssociated(tracked);
+  }
+        </code>
+      </method>
+
+    </class>
+  </package>
+</gdd>

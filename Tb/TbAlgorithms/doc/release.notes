@@ -1,0 +1,393 @@
+!-----------------------------------------------------------------------------
+! Package     : Tb/TbAlgorithms
+! Responsible :
+! Purpose     : Algorithms for Timepix3 testbeam analysis
+!-----------------------------------------------------------------------------
+
+! 2016-09-13 - Heinrich Schindler
+ - Move tracking efficiency related code to a dedicated class.
+
+! 2016-07-27 - Heinrich Schindler
+ - TbTrackPlots: add pull distributions.
+ - TbSimpleTracking: add chi2 cut.
+ - TbClustering: tune a bit the cluster errors.
+ 
+! 2016-07-22 - Heinrich Schindler
+ - TbTrackPlots: by default, fill residuals using the fit nodes stored on 
+   the tracks.
+
+! 2016-02-23 - Heinrich Schindler
+ - TbClustering: apply eta corrections if available.
+ - TbSimpleTracking: add option to remove outliers from a candidate track.
+
+! 2016-02-04 - Heinrich Schindler
+ - TbClustering: assign different cluster errors depending on the 
+   number of rows/columns covered by the cluster.
+ - TbSimpleTracking: add cut on max. cluster width,
+   deactivate monitoring by default.
+
+! 2016-01-31 - Heinrich Schindler
+ - TbClustering: move timing histograms to TbClusterPlots. 
+ - TbClusterAssociator: add track chi2 cut.
+
+! 2016-01-28 - Heinrich Schindler
+ - TbHitMonitor: add profile histograms of ToT/charge as function of column.
+ - TbClusterPlots: add ToT histograms.
+
+! 2016-01-26 - Heinrich Schindler
+ - TbSimpleTracking: apply charge and cluster size cuts also at seeding stage.
+
+! 2015-12-14 - Heinrich Schindler
+ - Add options to TbClusterAssociator to use hit or cluster coordinates and
+   to skip used clusters.
+ 
+! 2015-12-02 - Tim Evans
+ - Add new synchronisation method to TbCalibration.
+
+! 2015-11-12 - Dan Saunders
+ - Update default settings for clustering and tracking. 
+ - Add new cuts and function to recover missed hits to TbSimpleTracking.
+
+! 2015-10-29 - Heinrich Schindler
+ - Speed up TbClustering.
+
+! 2015-10-23 - Heinrich Schindler
+ - Fix compiler warnings uncovered by clang (signed vs unsigned int).
+
+!========================= TbAlgorithms v2r2 2015-05-19 =======================
+
+! 2015-05-19 - Heinrich Schindler
+ - Undo latest changes to TbAlignment. To be put back after the release.
+
+! 2015-05-18 - Tim Evans
+ - Added new features to the alignment, can run multiple alignment 
+   algorithms from the same job
+ - Added DeviceSurvey alignment algorithm, that uses time alignment 
+   to survey align a single device (i.e. the DuT)
+ - Options to only use a single trigger channel in the trigger 
+   associator
+
+! 2015-03-24 - Heinrich Schindler
+ - Add property TrackFitTool to TbTrackPlots, TbAlignment, TbTracking, 
+   TbSimpleTracking, TbVertexTracking.
+ - Small speed ups in TbTrackVolume and TbTracking.
+
+! 2015-03-09 - Heinrich Schindler
+ - Add TbDUTMonitor.
+ - TbTracking: avoid new/delete of TbTrackVolume for each seed cluster.
+
+! 2015-03-05 - Heinrich Schindler
+ - TbClusterPlots: bugfix in cluster width plot.
+ - TbTrackPlots: fix tracking efficiency plot titles.
+
+! 2015-03-03 - Heinrich Schindler
+ - Fix typo in previous commit.
+ - Allow tracking algorithms to pick up existing track containers 
+   (in case of multiple pattern recognition instances).
+
+! 2015-03-02 - Heinrich Schindler
+ - Tidy up TbAlignment (bug fix in technique 3, specify device to align and 
+   reference plane by plane index instead of device ID).
+
+! 2015-01-26 - Heinrich Schindler
+ - TbAlignment: remove unused class members.
+ - TbClustering: use scol instead of col in hitTouchesCluster. 
+
+! 2015-01-24 - Heinrich Schindler
+ - TbAlignment: pick up clusters in TbTrack::associatedClusters for technique 3.
+ - TbHitMonitor: plot scol instead of col in hit map.
+
+! 2015-01-21 - Heinrich Schindler
+ - TbClustering: use pixelToPosition function of TbGeometrySvc to 
+   compute the local cluster position.
+ - Fix bug in TbClusterPlots pointed out by Panos.
+ - Use TbHit::charge instead of ToT to compute the cluster charge.
+
+! 2015-01-20 - Heinrich Schindler
+ - Add algorithm TbClusterAssociator.
+
+! 2014-12-30 - Heinrich Schindler
+ - TbTrackVolume: remove unused functions and variables, 
+   separate public and private members, tag associated clusters in TbTracking.
+
+! 2014-12-28 - Heinrich Schindler
+ - Follow removal of TbCluster::endCluster, vertexed, volumed.
+
+! 2014-12-13 - Heinrich Schindler
+ - TbAlignment: add alignment technique 3 (similar to technique 2 but without 
+   requiring the device to align to be in the tracking. 
+
+! 2014-12-13 - Heinrich Schindler
+ - TbMillepede: use values instead of pointers for class members, 
+   remove unused variables.
+
+! 2014-12-12 - Heinrich Schindler
+ - Follow renaming of TbHit::plane to TbHit::device.
+
+! 2014-12-07 - Heinrich Schindler
+ - TbClustering: add member m_used to keep track of which hits are clustered.
+
+!========================= TbAlgorithms v2r1 2014-11-30 =======================
+
+! 2014-11-30 - Heinrich Schindler
+ - Convert TbMillepede to a Gaudi tool.
+
+! 2014-11-20 - Heinrich Schindler
+ - Convert TbClusterFinder to a Gaudi tool and move it to TbKernel.
+
+! 2014-11-11 - Dan Saunders
+ - Add TbVertexTracking.
+
+! 2014-10-26 - Dan Saunders
+ - Add efficiency calculation algorithm.
+
+! 2014-10-08 - Tim Evans
+ - Added simple algorithm TbCalibration which takes histograms from the 
+   tracking and the hitmonitor and produces pixel masks and per plane
+   time calibration constants
+
+! 2014-09-26 - Dan Saunders
+ - Added simple estimates of cluster position errors, and incorporated into 
+   TbTrackFit.
+ - Added optional new pattern recognition shape "sqDiabolo" (not yet default). 
+
+! 2014-09-19 - Heinrich Schindler
+ - Fix in TbAlignment technique 2 (use only clusters on device to align for
+   chi2 calculation).
+
+! 2014-08-26 - Christoph Hombach
+ - Improvements to MILLEPEDE
+
+!========================= TbAlgorithms v2r0 2014-08-18 =======================
+
+! 2014-08-15 - Heinrich Schindler
+ - Move spatial efficiency calculation in TbClusterPlots to external script. 
+ - Remove unused class TbAlignmentPlots.
+ - Fix compiler warning in TbAlignment (replace array by vector).
+
+! 2014-08-04 - Heinrich Schindler
+ - Sort clusters on track by z-position.
+
+! 2014-08-03 - Angelo Di Canto
+ - Minor update to TbAlignment (more configurable properties)
+
+! 2014-08-02 - Dan Saunders
+ - Fixed TbClustering inefficiency (now as good as previous slower version).
+
+! 2014-08-02 - Heinrich Schindler
+ - More residual plots for Paula.
+
+! 2014-08-01 - Dan Saunders  
+  - Updated TbClustering for speed/
+  - Extra plots (pull distributions) to TbTrackPlots.
+
+! 2014-08-01 - Christoph Hombach        
+  - Added alignment monitoring plots to TbTrackPlots
+  
+! 2014-07-30 - Christoph Hombach
+  - Update Millepede
+  
+! 2014-07-31 - Dan Saunders
+  - Changed default ordering of cluster hits to increasing in TOA.
+  - Added a few extra plots to TbTrackPlots.
+  - Updated example.py to use run1024 (assuming eos is mounted). 
+
+! 2014-07-29 - Heinrich Schindler
+ - Add TbTriggerAssociator.
+
+! 2014-07-21 - Christop Hombach
+ - Added residual plots, which can be called after alignment procedure in TbAlignment
+
+! 2014-07-21 - Tim Evans
+ - Added trigger data packets
+
+! 2014-07-21 - Angelo Di Canto
+ - Added checks for masked planes in TbAlignment
+ - Millepede renamed into TbMillepede
+ 
+! 2014-07-19 - Heinrich Schindler
+ - Add TbHeaderDecoder tool which reads and optionally dumps the Spidr header.
+ - TbEventBuilder: retrieve device ID from header and check if it matches 
+   with the alignment file.  
+ - Move TbAlgorithm to TbKernel.
+ - Millepede: clang-format and other cosmetic changes.
+
+! 2014-07-18 Christoph Hombach
+ - Removed DUT from Millepede fit -> Next step DUT separate 
+ - Added shell script to run alignment loop
+
+! 2014-07-18 - Heinrich Schindler
+ - Use htime instead of global time for time windows.
+
+! 2014-07-17 - Christoph Hombach
+ - Working implementation of Millepede
+ - Need to clean up code....
+
+! 2014-07-17 - Tim Evans
+ - Added extended timestamp functionality
+ - Added option to manually set the header size
+
+! 2014-07-14 - Dan Saunders
+ - Added hit maps to TbTrackPlots. 
+ - Few temporary additions to TbEventBuilder (all commented out), present for
+   DQM testing.
+ 
+! 2014-07-14 - Heinrich Schindler
+ - Add new class TbAlgorithm (base class for other testbeam algorithms).
+ 
+ ! 2014-07-14 - Dan Saunders
+ - New plots to TbTrackPlots, and separated filling into separate functions
+   for different categories of plot.
+ - New option in TbTracking to ignore listed planes during tracking.
+
+! 2014-07-09 - Heinrich Schindler
+ - Speed improvements in TbClusterFinder.
+ - TbClusterPlots: add configurable histogram parameters, 
+   histogram labels.
+ - TbTrackPlots: configurable histograms, add local residual plots. 
+
+! 2014-07-08 - Hella Snoek
+ - Added option to search for hits further away in TbClustering.
+ - Added some printout statements to info printing the configurables.
+
+! 2014-07-08 - Dan Saunders
+ - Added safety checks for using TbClusterFinder with empty planes.
+
+! 2014-07-08 - Heinrich Schindler
+ - Adapt TbTupleWriter to new TES locations.
+ - TbTracking: use Gaudi counter for nbr. of tracks; inline geomSvc; 
+   initialize planeSearchOrder directly.
+ - Follow renaming from "chip" to "plane" in TbHit and TbCluster.
+ - Run clang-format.
+ - Member functions to start consistently with lower case letter.
+ - Separate hit monitor histograms for each plane.
+ - Add one/two/three/four-pixel cluster ToT distributions to TbClusterPlots.
+
+! 2014-07-07 - Tim Evans
+ - Updated TbEventBuilder to use different TES locations for the different 
+   chips.
+
+! 2014-07-07 - Heinrich Schindler
+ - Fix compiler warnings in TbAlignmentPlots and TbAlignment.
+ - Update TbAlignment survey method to work with separate TES cluster locations.
+ 
+! 2014-07-07 - Dan Saunders
+ - Updated tracking and clustering to use different TES locations for hits and
+   clusters on different chips. 
+
+! 2014-07-04 - Dan Saunders
+ - Tidied up TbTrackPlots and TbClusterPlots
+ - Allowed for varying track sizes - minimum number of clusters set by 
+   TbTracking().MinNClusters = 5. Priority is given to more complete tracks.
+
+! 2014-07-03 - Angelo Di Canto 
+ - Speed improvements in TbAlignment
+ - Fixed bug in definition of alignment constants in TbAlignment
+
+! 2014-07-01 - Angelo Di Canto 
+ - Fixed few typos/bugs in TbAlignment
+
+! 2014-07-01 - Dan Saunders
+ - Tidied up TbTracking.
+
+! 2014-07-01 - Heinrich Schindler
+ - Add samples plot to TbClusterPlots.
+
+! 2014-06-30 - Heinrich Schindler
+ - TbClustering: remove monitoring plots (to be added to TbClusterPlots);
+   merge some short functions; use STL sort.
+
+! 2014-06-27 - Tim Evans
+ - Added reading of the header classes to TbEventBuilder
+ - Added TbRawFile class as a wrapper for input files to cleanup eventbuilder
+ - Moved raw bank decoding into event definitions
+ - Fixed read order dependence
+
+! 2014-06-25 - Heinrich Schindler
+ - Reduce finalise output of TbTupleWriter.
+ - Delete alignment tracks in destructor of TbAlignment.
+ - TbClustering: consistent definition of local and global coordinates.
+ - Fix compiler warnings.
+
+! 2014-06-19 - Heinrich Schindler
+ - Add TbTupleWriter.
+
+! 2014-06-16 - Dan Saunders
+ - Speed improvements in TbTracking.
+
+! 2014-06-06 - Heinrich Schindler
+ - TbHitMonitor: fix binning in 2D hitmap.
+
+!========================= TbAlgorithms v1r0 2014-05-30 =======================
+
+! 2014-05-29 - Heinrich Schindler
+ - Initialise geometry service pointers to NULL in constructor.
+ - TbEventBuilder::finalize: empty cache, close files.
+ - TbTracking: Get the number of planes from the geometry service.
+ - TbAlignment: change return value of techniqueX from StatusCode to bool.
+ - Follow renaming of chip_num to chip in TbCluster.
+ - Mask (for now) unused variable warnings in TbTrackVolume.
+ - Move TbTestMC and TbTrackFitter to Tb/TbSimulation.
+ 
+! 2014-05-28 - Heinrich Schindler
+ - TbTestMC: use Gaudi random number generators instead of TRandom3.
+ - Call finalize functions of actual base classes.
+ - Trivial formatting changes.
+
+! 2014-05-26 - Heinrich Schindler
+ - TbClustering: add new clusters directly to TbClusters container.
+ - TbTracking: idem; also use on-demand booking of histograms.
+
+! 2014-05-24 - Heinrich Schindler
+ - Follow changes in event classes; cosmetic modifications.
+ - Fix compiler warning in TbTrackFitter.
+ - TbEventBuilder: allow processing of all files in a given directory.
+
+! 2014-05-23 - Panagiotis Tsopelas
+ - In TbAlignment.cpp, TbTrackFitter, TbTrackPlots : 
+   Renamed "chi2" -> "chi2PerNdof" after change in TbTrack
+   Changed  every call to a first state parameter (x0, y0, tx, ty)
+   to a call through the "firstState" 
+
+! 2014-05-21 - Heinrich Schindler
+ - Fix signed/unsigned comparison compiler warnings.
+ - Transfer ownership to TES ("put") directly after newing.
+ - Remove unnecessary include statements.
+ - Remove setters/getters from algorithms (use declareProperty instead). 
+ - TbEventBuilder: change return type of retrieve function to bool 
+   and make it private.
+ - Run clang-format.
+ - TbEventBuilder, TbHitMonitor: add header guards
+ - Remove do-nothing finalize methods.
+
+! 2014-05-15 - Dan Saunders
+ - Added MC genorator and first version of tracking. This including a plot object
+   and prototype track object (TbTrackVolume) used during the track finding.
+   
+ - Clustering also updated to consider hits separated diagonally.
+
+! 2014-05-15 - Marco Clemencic
+ - Fixed CMake configuration.
+
+! 2014-05-06 - Panagiotis Tsopelas
+
+ - Added TbTrackFitter. In this class random cluster positions are assigned to the planes
+   and pseudoTbTracks are formed. Then the TbTrackFit::fit() method is called to fit the 
+   TbTracks. Residuals are also calculated.
+
+! 2014-04-29 - Dan Saunders
+ - Updated TbClustering
+ - Added a TbClusterPlots object - note: need to change local positions to global
+
+! 2014-04-11 - Heinrich Schindler
+ - TbEventBuilder: call stopRun after reaching end of file
+ - Run clang-format to get consistent formatting
+ - Change get to getIfExists
+ - Remove do-nothing finalize method
+
+! 2014-04-02 - Tim Evans
+ - Added TbEventBuilder and TbHitMonitor classes
+
+! 2014-03-31 - Heinrich Schindler
+ - Initial import
+

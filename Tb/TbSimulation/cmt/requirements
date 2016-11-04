@@ -1,0 +1,15 @@
+package TbSimulation 
+version v1r3
+
+branches          cmt doc src 
+include_path      none
+
+use  GaudiAlg     v*
+use  TbEvent      v*  Tb
+use  TbKernel     v*  Tb
+
+#============================================================================
+# Component library building rule
+#============================================================================
+library          TbSimulation    ../src/*.cpp -import=AIDA 
+apply_pattern    component_library library=TbSimulation

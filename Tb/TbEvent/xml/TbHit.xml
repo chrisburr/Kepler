@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE gdd SYSTEM "gdd.dtd" >
+<gdd>
+  <package name = 'TbEvent'>
+
+    <class name = "TbHit"
+           id = "4510"
+           author = "T. Evans"
+           desc = "Single pixel hit">
+      <location name = "Default" place = "Raw/Tb/Hits"/>
+      <base name = "KeyedObject&lt;int&gt;"/>
+      &KeyedContainer;
+ 
+      <constructor desc = 'Default constructor'
+                   initList = 'm_associated(false)'>
+      </constructor>
+   
+      <constructor desc = "Copy Constructor"
+                   argList = 'const LHCb::TbHit* other'>
+        <code>
+  m_row = other->row();
+  m_col = other->col();
+  m_scol = other->scol();
+  m_time = other->time();
+  m_htime = other->htime();
+  m_pixelAddress = other->pixelAddress();
+  m_ToT = other->ToT();
+  m_data = other->data();
+  m_device = other->device();
+  m_associated = other->associated();
+        </code>
+      </constructor>
+
+      <attribute name = "row"     
+                 type = "unsigned int"  
+                 desc = "row number"/>
+
+      <attribute name = "col" 
+                 type = "unsigned int"  
+                 desc = "column number"/>
+
+      <attribute name = "scol" 
+                 type = "unsigned int"  
+                 desc = "sensor column number"/>
+
+      <attribute name = "time"    
+                 type = "uint64_t"  
+                 desc = "global timestamp"/>
+
+      <attribute name = "htime"
+                 type = "double"
+                 desc = "local timestamp in ns"/>
+
+      <attribute name = "pixelAddress"
+                 type = "unsigned int"
+                 desc = "address of the pixel on the chip"/>
+   
+      <attribute name = "ToT"     
+                 type = "unsigned int" 
+                 desc = "time over threshold"/>
+
+      <attribute name = "charge"
+                 type = "double"
+                 desc = "collected charge (in electrons)"/>
+
+      <attribute name = "data"
+                 type = "uint64_t" 
+                 desc = "complete data line"/>
+
+      <attribute name = "device"
+                 type = "unsigned int"
+                 desc = "index of the chip"/>
+
+      <attribute name = "associated"
+                 type = "bool"
+                 desc = "flag for whether the hit is associated to a track"/>
+
+  </class>  
+ </package>
+</gdd>

@@ -1,0 +1,7 @@
+project KEPLER 
+
+use LHCB LHCB_v39r1 
+#use ONLINE ONLINE_v5r27
+
+build_strategy with_installarea
+structure_strategy without_version_directory

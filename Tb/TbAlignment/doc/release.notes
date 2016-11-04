@@ -1,0 +1,41 @@
+!-----------------------------------------------------------------------------
+! Package     : Tb/TbAlignment
+! Responsible : 
+! Purpose     : Algorithms for testbeam alignment
+!-----------------------------------------------------------------------------
+
+! 2015-11-02 - Heinrich Schindler
+ - Re-include isEdge function in TbAlignmentBase.
+ - Enclose fcn in namespace. Prettify monitoring output.
+ 
+! 2015-10-28 - Heinrich Schindler
+ - Remove TbAlignmentMinuit3 and TbAlignmentDeviceSurvey (functionality is now
+   included in TbAlignmentMinuit2).
+
+! 2015-10-28 - Tim Evans
+ - Merge TbAlignmentMinuit2, TbAlignmentMinuit3, and TbAlignmentDeviceSurvey.
+
+! 2015-10-21 - Heinrich Schindler
+ - Rewrite parts of TbMillepede to improve readability.
+
+! 2015-10-17 - Heinrich Schindler
+ - Remove duplicated property MaxChi2 from TbMillepede.
+ - Fix compiler warnings.
+
+! 2015-07-21 - Heinrich Schindler
+ - Tidy up. 
+
+! 2015-07-16  - Tim Evans
+ - Fixes in Millepede, fixed linking errors
+
+! 2015-06-28 - Heinrich Schindler
+ - Tidy up. Adapt "survey" technique to work from within a GaudiTool.
+
+! 2015-06-25 - Heinrich Schindler
+ - Rename files according to standard naming scheme.
+
+! 2015-06-23 - Tim Evans 
+ - First import of alignment algorithms from TbAlgorithms
+ - Split the alignment algorithm between a single meta algorithm that arranges 
+   a sequence of tools, and a collection of alignment tools that can be configured
+   and run in a sequence

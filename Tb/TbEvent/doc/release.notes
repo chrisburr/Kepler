@@ -1,0 +1,124 @@
+!-----------------------------------------------------------------------------
+! Package     : Tb/TbEvent
+! Responsible : 
+! Purpose     : Event model for Timepix3 testbeam analysis
+!-----------------------------------------------------------------------------
+
+! 2016-07-27 - Heinrich Schindler
+ - Kalman filter: separate noise terms for each plane.
+
+! 2016-07-21 - Heinrich Schindler
+ - Add new base class TbNode which holds measurement (cluster), state, and 
+   residuals. Move functions of TbKalmanPixelMeasurement to TbNode and 
+   TbKalmanNode, respectively.
+ - TbTrack: add fit status attribute, store nodes instead of states.
+ - Kalman filter: take measurement error from cluster.
+
+! 2016-02-14 - Heinrich Schindler
+ - Replace BOOST_FOREACH by intrinsic range-based for loop.
+
+! 2016-02-04 - Heinrich Schindler
+ - TbCluster: store cluster width along column and row directions.
+
+! 2016-01-28 - Heinrich Schindler
+ - TbHit: move code in constructor to TbEventBuilder.
+ - TbCluster: add attribute ToT.
+
+!========================= TbEvent v2r2 2015-05-19 ===========================
+
+! 2015-03-24 - Heinrich Schindler
+ - TbTrack: change states from std::vector<TbState*> to std::vector<TbState>.
+ - TbState: add attribute plane.
+ - Reserve hits, clusters, ... in constructor.
+
+! 2015-01-21 - Heinrich Schindler
+ - Change TbCluster::charge to double (was unsigned int).
+
+! 2015-01-20 - Heinrich Schindler
+ - Rename TbTrack::tracked to TbTrack::associated for consistency.
+   Add associatedClusters to TbTrack.
+
+! 2014-12-31 - Heinrich Schindler
+ - Add attribute scol to TbHit.
+
+! 2014-12-28 - Heinrich Schindler
+ - Remove attributes vertexed, endCluster, volumed from TbCluster.
+
+! 2014-12-12 - Heinrich Schindler
+ - Rename attribute "plane" of TbHit to "device".
+
+! 2014-12-07 - Heinrich Schindler
+ - Remove clustered attribute from TbHit.
+
+!========================= TbEvent v2r1 2014-11-30 ===========================
+
+! 2014-11-11 - Dan Saunders
+ - Add TbVertex.
+
+! 2014-10-12 - Panos Tsopelas
+ - Add TbKalmanTrack, TbKalmanNode, TbKalmanPixelMeasurement.
+ 
+!========================= TbEvent v2r0 2014-08-18 ===========================
+
+! 2014-08-07 - Wouter Hulsbergen
+ - add copy constructor and ::clearStates to TbTrack
+
+! 2014-07-18 - Heinrich Schindler
+ - Change default path of TbCluster, TbTrack and TbState from Raw to Rec.
+
+! 2014-07-17 - Tim Evans
+ - Removed redundant fields from TbHit and fixed for 64 bit time stamps
+
+! 2014-07-17 - Heinrich Schindler
+ - Add TbTrigger event class.
+ - Add htime attribute to TbHit, TbCluster, TbTrack and TbTrigger.
+
+! 2014-07-16 - Heinrich Schindler
+ - Change timestamp to unsigned long.
+
+! 2014-07-08 - Heinrich Schindler
+ - Rename "chip" to "plane" in TbHit and TbCluster.
+
+! 2014-07-02 - Heinrich Schindler
+ - Remove unused members and functions from event classes.
+ - Consistent spelling of "Spidr".
+
+! 2014-06-27 - Tim Evans
+ - Added header event classes SpiderHeader and DeviceHeader
+ - Added decoding functionality to TbHit.
+
+!========================= TbEvent v1r0 2014-05-30 ===========================
+
+! 2014-05-29 - Heinrich Schindler
+ - Change attribute name "chip_num" of TbCluster to "chip".
+
+! 2014-05-24 - Heinrich Schindler
+ - Consistent formatting
+ - Remove unused member variables from TbHit, TbCluster, TbTrack.
+ - Rename addToTbStates to addToStates and similar changes.
+ - Make TbState destructor virtual (fixes compiler warning).
+ - Remove unnecessary includes.
+
+! 2014-05-23 - Panagiotis Tsopelas
+ - Edited members of TbTrack ( chi2 -> chi2PerNdof ) 
+   Added clone, TbState vector
+ - Added covariance matrix and clone in TbState
+
+! 2014-05-15 - Marco Clemencic
+ - Fixed CMake configuration.
+
+! 2014-05-06 - Panagiotis Tsopelas
+ - Added ndof in TbTrack
+
+! 2014-04-29 - Panagiotis Tsopelas
+ - Added TbState
+ - Modified TbTrack (added firstState)
+
+! 2014-04-14 - Heinrich Schindler
+ - Add TbTrack
+
+! 2014-04-02 - Tim Evans
+ - Add TbHit, add timing information to TbCluster
+
+! 2014-03-31 - Heinrich Schindler
+ - Initial import 

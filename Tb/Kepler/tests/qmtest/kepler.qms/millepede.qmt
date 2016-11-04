@@ -1,0 +1,27 @@
+<?xml version="1.0" ?><!DOCTYPE extension  PUBLIC '-//QM/2.3/Extension//EN'  'http://www.codesourcery.com/qm/dtds/2.3/-//qm/2.3/extension//en.dtd'>
+<extension class="GaudiTest.GaudiExeTest" kind="test">
+  <argument name="program"><text>gaudirun.py</text></argument>
+  <argument name="options"><text>
+from Gaudi.Configuration import *
+from Configurables import Kepler
+run = "7615"
+path = "eos/lhcb/testbeam/velo/timepix3/July2015/"
+Kepler().InputFiles = [path + "RawData/Run" + run + "/"]
+Kepler().AlignmentFile = path + "RootFiles/Run" + run + "/Conditions/Alignment" + run + "mille.dat"
+Kepler().Alignment = True
+from Configurables import TbMillepede 
+Kepler().addAlignment(TbMillepede(MaxChi2 = 1000, ResCutInit = 0.5, ResCut = 0.03, MaskedPlanes = [4]))
+from Configurables import TbAlignment
+TbAlignment().NTracks = 10000
+from Configurables import TbEventBuilder
+TbEventBuilder().MinPlanesWithHits = 5
+from Configurables import TbSimpleTracking
+TbSimpleTracking().MaskedPlanes = [4]
+  </text></argument>
+  <argument name="exit_code"><integer>4</integer></argument>
+  <argument name="reference"><text>$KEPLERROOT/tests/refs/testMillepede.ref</text></argument>
+  <argument name="validator"><text>
+from Kepler.QMTest.KeplerExclusions import preprocessor
+validateWithReference(preproc = preprocessor)
+  </text></argument>
+</extension>

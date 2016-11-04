@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE gdd SYSTEM "gdd.dtd" >
+<gdd>
+  <package name = "TbEvent">
+    <class name = "TbTrigger"
+           id = "4513"
+           author = "H. Schindler"
+           desc = "Trigger timestamp">
+      <location name = "Default" place = "Raw/Tb/Triggers"/>
+      <base name = "KeyedObject&lt;int&gt;"/>
+      &KeyedContainer;
+      
+      <constructor desc = 'Constructor with pixel packet'
+                   argList = 'uint64_t data'
+                   initList = 'm_associated(false)'>
+        <code>
+  m_plane = 0;
+  m_data = data;
+  m_time = 0xFFFFFFFFFFF &amp; data;
+  m_counter = (data >> 44) &amp; 0xFFF;
+        </code>
+      </constructor>
+
+      <constructor desc = 'Copy constructor'
+                   argList = 'const LHCb::TbTrigger* other'>
+        <code>
+  m_plane = other->plane();
+  m_data = other->data();
+  m_time = other->time();
+  m_counter = other->counter();
+  m_htime = other->htime();
+  m_associated = other->associated();
+        </code>
+      </constructor>
+
+      <attribute name = "counter"
+                 type = "unsigned int"
+                 desc = "counter"/>
+
+      <attribute name = "time"    
+                 type = "uint64_t"
+                 desc = "global timestamp"/>
+
+      <attribute name = "data"    
+                 type = "uint64_t"
+                 desc = "complete data packet"/>
+
+      <attribute name = "htime"
+                 type = "double"
+                 desc = "local timestamp in ns"/>
+
+      <attribute name = "associated"
+                 type = "bool"
+                 desc = "flag whether the trigger is associated to a track"/>
+      <attribute name = "plane"
+                 type = "int"
+                 desc = "Plane of the trigger, dummy for the alignment"/>
+  </class> 
+ </package>
+</gdd>

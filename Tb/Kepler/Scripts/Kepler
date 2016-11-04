@@ -1,0 +1,119 @@
+#!/bin/bash
+. /etc/bashrc
+
+scratch=$(pwd)
+shopt -s expand_aliases
+export eospath=eos/lhcb/testbeam/velo/timepix3/
+
+# if [ -z  $USE_CMAKE ] ; then . SetupProject.sh Kepler HEAD; fi
+
+if [ -z $KEPLERBUILDIR ] ; then
+ KEPLERBUILDIR=$User_release_area/KEPLER/KEPLER_HEAD/build.$CMTCONFIG/
+fi
+
+echo "CMTCONFIG = $CMTCONFIG"
+
+
+tb=July2014
+if [ "$1" -gt "2000" ]; then tb=Oct2014; fi
+if [ "$1" -gt "3000" ]; then tb=Nov2014; fi
+if [ "$1" -gt "3999" ]; then tb=Dec2014; fi
+if [ "$1" -gt "4999" ]; then tb=May2015; fi
+if [ "$1" -gt "6733" ]; then tb=July2015; fi
+if [ "$1" -gt "12000" ]; then tb=Sep2015; fi
+if [ "$1" -gt "13509" ]; then tb=Nov2015; fi
+if [ "$1" -gt "15000" ]; then tb=May2016; fi 
+# TBDATA
+if [ -z "$TBDATA" ]; then
+  echo "No output directory defined - define variable $TBDATA"
+fi
+
+mkdir -p $TBDATA/$tb/Run$1/
+
+RUN=$1
+echo "Processing Run $1"
+
+condFolder="$eospath/$tb/RootFiles/Run$1/Conditions/"
+input_option="Kepler().InputFiles=['$eospath/$tb/RawData/Run$RUN/']"
+alignment="Kepler().AlignmentFile='$condFolder/Alignment$1mille.dat'"
+job="../options/batch.py"
+
+histo_file="Kepler().HistogramFile='$TBDATA/$tb/Run$RUN/Kepler-histos.root'"
+tuple_file="Kepler().TupleFile='$TBDATA/$tb/Run$RUN/Kepler-tuple.root'"
+log_file=$TBDATA/$tb/Run$1/Run$1.std.out
+alignment_out="TbAlignment().OutputAlignmentFile='Alignment_out.dat'"
+nEvents=""
+
+
+while [[ $# > 1 ]]
+do
+  key="$1"
+  case $key in
+    -o|--options) # specify the options file to use 
+      job="$2"
+      shift # past argument
+      ;;
+    -a|--alignment) #specify an alignment file 
+      alignment="Kepler().AlignmentFile='$2'"
+      shift # past argument
+      ;;
+    -ao|--alignmentOut) #specify alignment file output
+      alignment_out="TbAlignment().OutputAlignmentFile='$2'"
+      shift
+      ;;
+    -i|--input)
+      input_option="Kepler().InputFiles=['$2']"
+      shift
+      ;;
+    -h|--hist) #specify histogram output
+      histo_file="Kepler().HistogramFile='$2'"
+      shift
+      ;;
+    -t|--nTuple) #specify nTuple output
+      tuple_file="Kepler().TupleFile='$2'"
+      shift
+      ;;
+    -lg|--log) #specify text log location
+      log_file=$2
+      shift
+      ;;
+    -l|--local) #use "local" mode for H8 operations
+      input_option="Kepler().InputFiles=["
+      FILES=""
+      for f in {0..10}; do
+        for file in /mnt/DATA/Dev$f/Run$RUN/*.dat ; do
+          FILES+="'$file',"
+        done
+      done
+      input_option+=`echo $FILES | sed 's/.$//'`
+      input_option+="]"
+      echo $input_option
+      ;;
+    -n|--nEvents) #specify a number of events
+      nEvents="Kepler().EvtMax=$2"
+      shift
+      ;;
+    --default)
+      DEFAULT=YES
+      ;;
+    *)
+      # unknown option
+      ;;
+  esac
+  shift # past argument or value
+done
+
+if [ ! $USE_CMAKE ] ; then 
+  echo "Using CMT make" 
+  gaudirun.py --option="from Configurables import Kepler, TbAlignment" \
+    --option=$histo_file \ 
+  --option=$tuple_file \
+    --option=$alignment_out \
+    --option=$nEvents  \ 
+  --option=$alignment \
+    --option=$input_option \
+    $job |& tee $TBDATA/$tb/Run$1/Run$1.std.out
+
+else 
+  $KEPLERBUILDIR/run gaudirun.py --option="from Configurables import Kepler, TbAlignment" --option=$histo_file --option=$tuple_file --option=$alignment_out --option=$nEvents --option=$alignment --option=$input_option $job |& tee $TBDATA/$tb/Run$1/Run$1.std.out
+fi

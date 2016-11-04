@@ -1,0 +1,25 @@
+package TbUT 
+version v1r1
+
+branches          cmt doc src  
+include_path      none
+
+use  GaudiAlg     v*
+use  Boost        v*  LCG_Interfaces
+use TbEvent           v*    Tb
+use TbKernel           v*    Tb
+
+#============================================================================
+# Component library building rule
+#============================================================================
+library          TbUT    ../src/*.cpp -import=AIDA 
+library          TbUT    ../src/alibava/*.cpp -import=AIDA 
+library          TbUT    ../src/mamba/*.cpp -import=AIDA 
+
+apply_pattern    component_library library=TbUT
+macro_append Boost_linkopts $(Boost_linkopts_system)
+macro_append Boost_linkopts $(Boost_linkopts_filesystem)
+macro_append Boost_linkopts $(Boost_linkopts_serialization)
+macro_append Boost_linkopts $(Boost_linkopts_iostreams)
+macro_append ROOT_linkopts " -lHist -lMinuit -lMathCore"
+

@@ -1,0 +1,20 @@
+package TbAlgorithms 
+version v2r2
+
+branches          cmt doc src 
+include_path      none
+
+use  GaudiAlg     v*
+use  TbEvent      v*  Tb
+use  TbKernel     v*  Tb
+use  Boost        v*  LCG_Interfaces
+
+#============================================================================
+# Component library building rule
+#============================================================================
+library          TbAlgorithms    ../src/*.cpp -import=AIDA 
+apply_pattern    component_library library=TbAlgorithms
+macro_append Boost_linkopts $(Boost_linkopts_system)
+macro_append Boost_linkopts $(Boost_linkopts_filesystem)
+macro_append Boost_linkopts $(Boost_linkopts_iostreams)
+macro_append ROOT_linkopts " -lMinuit -lHist -lPhysics"

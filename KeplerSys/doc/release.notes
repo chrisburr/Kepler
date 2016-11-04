@@ -1,0 +1,86 @@
+<PRE>
+!-----------------------------------------------------------------------------
+! Package     : KeplerSys
+! Responsible : 
+! Purpose     : Timepix3 testbeam analysis application
+!-----------------------------------------------------------------------------
+
+</PRE><H1><A NAME=v3r0>2015-05-19 Kepler v3r0</A></H1><PRE>
+This version uses LHCb v38r6. 
+
+ - Functionality changes
+   . Add interface for handling remote input files, making the 
+     (unsafe) fuse mounting of eos obsolete. 
+   . Improve handling of DUTs. 
+      . Add support for 3 x 1 tiles.
+      . Add algorithm TbClusterAssociator for linking clusters to tracks.
+      . Add corresponding monitoring algorithm TbDUTMonitor. 
+      . Add alignment technique 3.
+   . New functionality in TbUT package.
+   . Tracking
+      . Add flexibility to several algorithms in sequence (or multiple 
+        instances of the same algorithm).
+      . Add option to choose the track fit tool to be used. 
+
+ - Performance optimisation
+   . Speed improvements and simplifications in tracking algorithms.
+
+</PRE><H1><A NAME=v2r1>2014-11-30 Kepler v2r1</A></H1><PRE>
+This version uses LHCb v38r2. 
+
+ - Packaging changes
+   . New package TbUT.
+   . New package TbAnalysis for algorithms specific to particular analyses.
+ 
+ - Functionality changes 
+   . Event model
+      . Added objects used in Kalman fit.
+   . New algorithm TbPacketRecycler to allow sharing of hits between events.
+   . New algorithms for calculating efficiency, resolution, timewalk, 
+     finding vertices, and determining calibration parameters.
+   . Alignment
+      . Improvements to TbMillepede
+      . Bugfix in alignment technique 2.
+   . Added support for Combat telescope.
+   . Added options to define time offsets for planes and columns.
+
+</PRE><H1><A NAME=v2r0>2014-08-19 Kepler v2r0</A></H1><PRE>
+This version uses LHCb v38r0. It is a snapshot of the 
+code at the end of the July/August testbeam at the PS.
+
+ - Packaging changes
+   . New package TbIO for algorithms related to input/output.
+
+ - Functionality changes
+   . TbEventBuilder
+      . Added support for "long" and trigger timestamps.
+      . Added decoding of Spidr headers.
+      . Added support for multiple input files per plane.
+      . Added options to mask pixels and suppress noise events.
+   . TbAlignment
+      . Added Millipede alignment and coarse alignment based on clusters.
+   . Extended monitoring plots.
+   . Added algorithms for dealing with trigger timestamps.
+   . Event model
+      . Separate TES locations for hits and clusters of each plane. 
+      . All global times are represented by 64-bit integers.
+
+ - Performance optimisation
+   . Speed improvements in TbClustering and TbTracking.
+   . Updated default settings.
+
+ - Bug fixes
+   . Many
+ 
+</PRE><H1><A NAME=v1r0>2014-05-30 Kepler v1r0</A></H1><PRE>
+This version uses projects Gaudi v25r1 and LHCb v37r2.
+It includes five packages: 
+<UL>
+<LI>Tb/Kepler: main configurable</LI>
+<LI>Tb/TbAlgorithms: reconstruction algorithms</LI> 
+<LI>Tb/TbEvent: event model classes</LI>
+<LI>Tb/TbKernel: common tools and services</LI>
+<LI>Tb/TbSimulation: algorithms for producing simulated data</LI>
+</UL>
+
+</PRE>

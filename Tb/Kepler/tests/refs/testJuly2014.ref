@@ -1,0 +1,555 @@
+# setting LC_ALL to "C"
+# --> Including file '/afs/cern.ch/user/h/hschindl/cmtuser/KEPLER/KEPLER_HEAD/Tb/Kepler/testJuly.py'
+# <-- End of file '/afs/cern.ch/user/h/hschindl/cmtuser/KEPLER/KEPLER_HEAD/Tb/Kepler/testJuly.py'
+# applying configuration of Kepler
+# /***** User Kepler/Kepler **************************************************************************
+# |-Tracking         = True
+# |-Monitoring       = True
+# |-TimingConfigFile = '/afs/cern.ch/work/h/hschindl/public/Kepler/TimingConfig.dat'  (default: '')
+# |-TupleFile        = ''
+# |-AlignmentFile    = '/afs/cern.ch/work/h/hschindl/public/Kepler/Alignment1024.dat'  (default: '')
+# |-EvtMax           = 100  (default: -1)
+# |-WriteTuples      = False
+# |-HistogramFile    = ''
+# |-PixelConfigFile  = ['/afs/cern.ch/work/h/hschindl/public/Kepler/PixelConfig.dat']  (default: [])
+# |-UserAlgorithms   = []  (default: [])
+# |-InputFiles       = ['/afs/cern.ch/work/h/hschindl/public/Kepler/Run1024/']  (default: [])
+# |-Alignment        = False
+# \----- (End of User Kepler/Kepler) -----------------------------------------------------------------
+ApplicationMgr    SUCCESS 
+====================================================================================================================================
+                                                   Welcome to Kepler version v2r1
+                                          running on lxplus0206.cern.ch on Sun Dec 14 10:03:26 2014
+====================================================================================================================================
+ApplicationMgr       INFO Application Manager Configured successfully
+TbDataSvc            INFO Reading File: /afs/cern.ch/work/h/hschindl/public/Kepler/Run1024/W0002_B05-140727-160847-1024-1.dat
+TbDataSvc            INFO Reading File: /afs/cern.ch/work/h/hschindl/public/Kepler/Run1024/W0002_C05-140727-160821-1024-1.dat
+TbDataSvc            INFO Reading File: /afs/cern.ch/work/h/hschindl/public/Kepler/Run1024/W0002_D05-140727-160821-1024-1.dat
+TbDataSvc            INFO Reading File: /afs/cern.ch/work/h/hschindl/public/Kepler/Run1024/W0002_E05-140727-160822-1024-1.dat
+TbDataSvc            INFO Reading File: /afs/cern.ch/work/h/hschindl/public/Kepler/Run1024/W0002_F05-140727-160823-1024-1.dat
+TbDataSvc            INFO Reading File: /afs/cern.ch/work/h/hschindl/public/Kepler/Run1024/W0002_G05-140727-160823-1024-1.dat
+TbDataSvc            INFO Reading File: /afs/cern.ch/work/h/hschindl/public/Kepler/Run1024/W0002_H07-140727-160822-1024-1.dat
+TbDataSvc            INFO Reading File: /afs/cern.ch/work/h/hschindl/public/Kepler/Run1024/W0002_J06-140727-160846-1024-1.dat
+TbGeometrySvc        INFO Importing alignment conditions from /afs/cern.ch/work/h/hschindl/public/Kepler/Alignment1024.dat
+TbGeometrySvc        INFO  0 W0002_J06           16.644     14.226      0.000      2.936      3.288      0.025
+TbGeometrySvc        INFO  1 W0002_B05           16.142     13.893     31.000      2.938      3.293      0.017
+TbGeometrySvc        INFO  2 W0002_C05           16.381     13.986     60.000      2.942      3.292      0.011
+TbGeometrySvc        INFO  3 W0002_D05           16.444     13.767     89.000      2.947      3.308      0.009
+TbGeometrySvc        INFO  4 W0002_G05            0.000     14.080    300.000      3.297      0.157      0.000
+TbGeometrySvc        INFO  5 W0002_F05            0.353     14.052    330.000      3.295      0.159      0.013
+TbGeometrySvc        INFO  6 W0002_H07            0.372     14.144    360.000      3.294      0.167      0.019
+TbGeometrySvc        INFO  7 W0002_E05            0.647     14.410    391.000      3.290      0.152      0.028
+TbPixelSvc           INFO Importing pixel configuration from /afs/cern.ch/work/h/hschindl/public/Kepler/PixelConfig.dat
+TbPixelSvc           INFO Masking pixel 0x8b46 (column 139, row 162) on device W0002_J06
+TbPixelSvc           INFO Masking pixel 0x4cbc (column  77, row  92) on device W0002_C05
+TbPixelSvc           INFO Masking pixel 0x05b5 (column   5, row 217) on device W0002_E05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 97 on chip W0002_J06
+TbPixelSvc           INFO Adding time offset -25 ns to double column 98 on chip W0002_J06
+TbPixelSvc           INFO Adding time offset -25 ns to double column 99 on chip W0002_J06
+TbPixelSvc           INFO Adding time offset -25 ns to double column 100 on chip W0002_J06
+TbPixelSvc           INFO Adding time offset -25 ns to double column 101 on chip W0002_J06
+TbPixelSvc           INFO Adding time offset -25 ns to double column 87 on chip W0002_B05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 97 on chip W0002_B05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 98 on chip W0002_B05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 99 on chip W0002_B05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 100 on chip W0002_B05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 101 on chip W0002_B05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 102 on chip W0002_B05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 91 on chip W0002_C05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 97 on chip W0002_C05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 98 on chip W0002_C05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 99 on chip W0002_C05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 100 on chip W0002_C05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 101 on chip W0002_C05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 102 on chip W0002_C05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 97 on chip W0002_D05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 98 on chip W0002_D05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 99 on chip W0002_D05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 100 on chip W0002_D05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 101 on chip W0002_D05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 97 on chip W0002_G05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 98 on chip W0002_G05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 99 on chip W0002_G05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 100 on chip W0002_G05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 101 on chip W0002_G05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 102 on chip W0002_G05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 97 on chip W0002_F05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 98 on chip W0002_F05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 99 on chip W0002_F05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 100 on chip W0002_F05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 101 on chip W0002_F05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 97 on chip W0002_H07
+TbPixelSvc           INFO Adding time offset -25 ns to double column 98 on chip W0002_H07
+TbPixelSvc           INFO Adding time offset -25 ns to double column 99 on chip W0002_H07
+TbPixelSvc           INFO Adding time offset -25 ns to double column 100 on chip W0002_H07
+TbPixelSvc           INFO Adding time offset -25 ns to double column 101 on chip W0002_H07
+TbPixelSvc           INFO Adding time offset -25 ns to double column 97 on chip W0002_E05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 98 on chip W0002_E05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 99 on chip W0002_E05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 100 on chip W0002_E05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 101 on chip W0002_E05
+TbPixelSvc           INFO Adding time offset -25 ns to double column 102 on chip W0002_E05
+TbPixelSvc           INFO Importing pixel configuration from /afs/cern.ch/work/h/hschindl/public/Kepler/TimingConfig.dat
+TbPixelSvc           INFO Adding time offset 0 ns (0 time units) to chip W0002_J06
+TbPixelSvc           INFO Adding time offset -12.1264 ns (-1987 time units) to chip W0002_B05
+TbPixelSvc           INFO Adding time offset 1.60015 ns (262 time units) to chip W0002_C05
+TbPixelSvc           INFO Adding time offset -8.18727 ns (-1341 time units) to chip W0002_D05
+TbPixelSvc           INFO Adding time offset -16.4738 ns (-2699 time units) to chip W0002_G05
+TbPixelSvc           INFO Adding time offset 2.35494 ns (386 time units) to chip W0002_F05
+TbPixelSvc           INFO Adding time offset -5.43922 ns (-891 time units) to chip W0002_H07
+TbPixelSvc           INFO Adding time offset -15.053 ns (-2466 time units) to chip W0002_E05
+RndmGenSvc.Engine    INFO Generator engine type:CLHEP::RanluxEngine
+RndmGenSvc.Engine    INFO Current Seed:1234567 Luxury:3
+RndmGenSvc           INFO Using Random engine:HepRndm::Engine<CLHEP::RanluxEngine>
+TimingAuditor.T...   INFO This machine has a speed about   3.33 times the speed of a 2.8 GHz Xeon.
+NTupleSvc            INFO Added stream file:Kepler-tuple.root as FILE1
+KeplerSequencer      INFO Member list: GaudiSequencer/Telescope, GaudiSequencer/Monitoring, GaudiSequencer/Output
+Telescope            INFO Member list: TbEventBuilder, TbClustering, GaudiSequencer/Tracking, TbTriggerAssociator, TbClusterAssociator
+RootHistSvc          INFO Writing ROOT histograms to: Kepler-histos.root
+HistogramPersis...   INFO Added successfully Conversion service:RootHistSvc
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO                         File header 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  ID                              0x52445053 
+ToolSvc.TbHeade...   INFO  Total size                      768 
+ToolSvc.TbHeade...   INFO  Size                            512 
+ToolSvc.TbHeade...   INFO  Format                          0x00000001 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  SPIDR ID                        0x2000017 
+ToolSvc.TbHeade...   INFO  Library version                 0x14072400 
+ToolSvc.TbHeade...   INFO  Software version                0x14071501 
+ToolSvc.TbHeade...   INFO  Firmware version                0x14072101 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  IP address                      192.168.100.1 
+ToolSvc.TbHeade...   INFO  IP port                         8193 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Date                            2014-07-27
+ToolSvc.TbHeade...   INFO  Time                            16:08:47.26
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Run number                      1024 
+ToolSvc.TbHeade...   INFO  Sequence number                 1 
+ToolSvc.TbHeade...   INFO  Run info                        10 GeV no protection covers 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Spidr configuration             0x000a0800 
+ToolSvc.TbHeade...   INFO  Data filter                     0xf3ffffff 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO                        Device header
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Type ID                         0x33585054 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Device ID                       0x252 
+ToolSvc.TbHeade...   INFO                                  W0002_B05 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  General config                  0x00000668 
+ToolSvc.TbHeade...   INFO  Output block config             0x000009ff 
+ToolSvc.TbHeade...   INFO  PLL config                      0x0000001e 
+ToolSvc.TbHeade...   INFO  Testpulse config                0x000a0001 
+ToolSvc.TbHeade...   INFO  SLVS config                     0x00000008 
+ToolSvc.TbHeade...   INFO  Power pulsing config            0x00000008 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  DAC values                      000 128 008 128
+ToolSvc.TbHeade...   INFO                                  010 128 244 006
+ToolSvc.TbHeade...   INFO                                  128 008 128 008
+ToolSvc.TbHeade...   INFO                                  128 128 128 128
+ToolSvc.TbHeade...   INFO                                  256 128 128 000
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+TbEventBuilder       INFO W0002_B05 (device 1) is mapped to plane 1
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO                         File header 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  ID                              0x52445053 
+ToolSvc.TbHeade...   INFO  Total size                      768 
+ToolSvc.TbHeade...   INFO  Size                            512 
+ToolSvc.TbHeade...   INFO  Format                          0x00000001 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  SPIDR ID                        0x2000028 
+ToolSvc.TbHeade...   INFO  Library version                 0x14072400 
+ToolSvc.TbHeade...   INFO  Software version                0x14071501 
+ToolSvc.TbHeade...   INFO  Firmware version                0x14072101 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  IP address                      192.168.100.1 
+ToolSvc.TbHeade...   INFO  IP port                         8192 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Date                            2014-07-27
+ToolSvc.TbHeade...   INFO  Time                            16:08:21.67
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Run number                      1024 
+ToolSvc.TbHeade...   INFO  Sequence number                 1 
+ToolSvc.TbHeade...   INFO  Run info                        10 GeV no protection covers 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Spidr configuration             0x000a0800 
+ToolSvc.TbHeade...   INFO  Data filter                     0xf3ffffff 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO                        Device header
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Type ID                         0x33585054 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Device ID                       0x253 
+ToolSvc.TbHeade...   INFO                                  W0002_C05 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  General config                  0x00000668 
+ToolSvc.TbHeade...   INFO  Output block config             0x000009ff 
+ToolSvc.TbHeade...   INFO  PLL config                      0x0000001e 
+ToolSvc.TbHeade...   INFO  Testpulse config                0x000a0001 
+ToolSvc.TbHeade...   INFO  SLVS config                     0x00000008 
+ToolSvc.TbHeade...   INFO  Power pulsing config            0x00000008 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  DAC values                      000 128 008 128
+ToolSvc.TbHeade...   INFO                                  010 128 229 006
+ToolSvc.TbHeade...   INFO                                  128 008 128 008
+ToolSvc.TbHeade...   INFO                                  128 128 128 128
+ToolSvc.TbHeade...   INFO                                  256 128 128 000
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+TbEventBuilder       INFO W0002_C05 (device 2) is mapped to plane 2
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO                         File header 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  ID                              0x52445053 
+ToolSvc.TbHeade...   INFO  Total size                      768 
+ToolSvc.TbHeade...   INFO  Size                            512 
+ToolSvc.TbHeade...   INFO  Format                          0x00000001 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  SPIDR ID                        0x2000028 
+ToolSvc.TbHeade...   INFO  Library version                 0x14072400 
+ToolSvc.TbHeade...   INFO  Software version                0x14071501 
+ToolSvc.TbHeade...   INFO  Firmware version                0x14072101 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  IP address                      192.168.100.1 
+ToolSvc.TbHeade...   INFO  IP port                         8193 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Date                            2014-07-27
+ToolSvc.TbHeade...   INFO  Time                            16:08:21.97
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Run number                      1024 
+ToolSvc.TbHeade...   INFO  Sequence number                 1 
+ToolSvc.TbHeade...   INFO  Run info                        10 GeV no protection covers 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Spidr configuration             0x000a0800 
+ToolSvc.TbHeade...   INFO  Data filter                     0xf3ffffff 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO                        Device header
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Type ID                         0x33585054 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Device ID                       0x254 
+ToolSvc.TbHeade...   INFO                                  W0002_D05 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  General config                  0x00000668 
+ToolSvc.TbHeade...   INFO  Output block config             0x000009ff 
+ToolSvc.TbHeade...   INFO  PLL config                      0x0000001e 
+ToolSvc.TbHeade...   INFO  Testpulse config                0x000a0001 
+ToolSvc.TbHeade...   INFO  SLVS config                     0x00000008 
+ToolSvc.TbHeade...   INFO  Power pulsing config            0x00000008 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  DAC values                      000 128 008 128
+ToolSvc.TbHeade...   INFO                                  010 128 198 006
+ToolSvc.TbHeade...   INFO                                  128 008 128 008
+ToolSvc.TbHeade...   INFO                                  128 128 128 128
+ToolSvc.TbHeade...   INFO                                  256 128 128 000
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+TbEventBuilder       INFO W0002_D05 (device 3) is mapped to plane 3
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO                         File header 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  ID                              0x52445053 
+ToolSvc.TbHeade...   INFO  Total size                      768 
+ToolSvc.TbHeade...   INFO  Size                            512 
+ToolSvc.TbHeade...   INFO  Format                          0x00000001 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  SPIDR ID                        0x2000029 
+ToolSvc.TbHeade...   INFO  Library version                 0x14072400 
+ToolSvc.TbHeade...   INFO  Software version                0x14071501 
+ToolSvc.TbHeade...   INFO  Firmware version                0x14072101 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  IP address                      192.168.100.1 
+ToolSvc.TbHeade...   INFO  IP port                         8193 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Date                            2014-07-27
+ToolSvc.TbHeade...   INFO  Time                            16:08:22.53
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Run number                      1024 
+ToolSvc.TbHeade...   INFO  Sequence number                 1 
+ToolSvc.TbHeade...   INFO  Run info                        10 GeV no protection covers 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Spidr configuration             0x000a0800 
+ToolSvc.TbHeade...   INFO  Data filter                     0xf3ffffff 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO                        Device header
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Type ID                         0x33585054 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Device ID                       0x255 
+ToolSvc.TbHeade...   INFO                                  W0002_E05 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  General config                  0x00000668 
+ToolSvc.TbHeade...   INFO  Output block config             0x000009ff 
+ToolSvc.TbHeade...   INFO  PLL config                      0x0000001e 
+ToolSvc.TbHeade...   INFO  Testpulse config                0x000a0001 
+ToolSvc.TbHeade...   INFO  SLVS config                     0x00000008 
+ToolSvc.TbHeade...   INFO  Power pulsing config            0x00000008 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  DAC values                      000 128 008 128
+ToolSvc.TbHeade...   INFO                                  010 128 192 006
+ToolSvc.TbHeade...   INFO                                  128 008 128 008
+ToolSvc.TbHeade...   INFO                                  128 128 128 128
+ToolSvc.TbHeade...   INFO                                  256 128 128 000
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+TbEventBuilder       INFO W0002_E05 (device 7) is mapped to plane 7
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO                         File header 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  ID                              0x52445053 
+ToolSvc.TbHeade...   INFO  Total size                      768 
+ToolSvc.TbHeade...   INFO  Size                            512 
+ToolSvc.TbHeade...   INFO  Format                          0x00000001 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  SPIDR ID                        0x2000004 
+ToolSvc.TbHeade...   INFO  Library version                 0x14072400 
+ToolSvc.TbHeade...   INFO  Software version                0x14071501 
+ToolSvc.TbHeade...   INFO  Firmware version                0x14072101 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  IP address                      192.168.100.1 
+ToolSvc.TbHeade...   INFO  IP port                         8193 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Date                            2014-07-27
+ToolSvc.TbHeade...   INFO  Time                            16:08:23.99
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Run number                      1024 
+ToolSvc.TbHeade...   INFO  Sequence number                 1 
+ToolSvc.TbHeade...   INFO  Run info                        10 GeV no protection covers 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Spidr configuration             0x000a0800 
+ToolSvc.TbHeade...   INFO  Data filter                     0xf3ffffff 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO                        Device header
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Type ID                         0x33585054 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Device ID                       0x256 
+ToolSvc.TbHeade...   INFO                                  W0002_F05 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  General config                  0x00000668 
+ToolSvc.TbHeade...   INFO  Output block config             0x000009ff 
+ToolSvc.TbHeade...   INFO  PLL config                      0x0000001e 
+ToolSvc.TbHeade...   INFO  Testpulse config                0x000a0001 
+ToolSvc.TbHeade...   INFO  SLVS config                     0x00000008 
+ToolSvc.TbHeade...   INFO  Power pulsing config            0x00000008 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  DAC values                      000 128 008 128
+ToolSvc.TbHeade...   INFO                                  010 128 224 006
+ToolSvc.TbHeade...   INFO                                  128 008 128 008
+ToolSvc.TbHeade...   INFO                                  128 128 128 128
+ToolSvc.TbHeade...   INFO                                  256 128 128 000
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+TbEventBuilder       INFO W0002_F05 (device 5) is mapped to plane 5
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO                         File header 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  ID                              0x52445053 
+ToolSvc.TbHeade...   INFO  Total size                      768 
+ToolSvc.TbHeade...   INFO  Size                            512 
+ToolSvc.TbHeade...   INFO  Format                          0x00000001 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  SPIDR ID                        0x2000004 
+ToolSvc.TbHeade...   INFO  Library version                 0x14072400 
+ToolSvc.TbHeade...   INFO  Software version                0x14071501 
+ToolSvc.TbHeade...   INFO  Firmware version                0x14072101 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  IP address                      192.168.100.1 
+ToolSvc.TbHeade...   INFO  IP port                         8192 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Date                            2014-07-27
+ToolSvc.TbHeade...   INFO  Time                            16:08:23.68
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Run number                      1024 
+ToolSvc.TbHeade...   INFO  Sequence number                 1 
+ToolSvc.TbHeade...   INFO  Run info                        10 GeV no protection covers 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Spidr configuration             0x000a0800 
+ToolSvc.TbHeade...   INFO  Data filter                     0xf3ffffff 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO                        Device header
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Type ID                         0x33585054 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Device ID                       0x257 
+ToolSvc.TbHeade...   INFO                                  W0002_G05 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  General config                  0x00000668 
+ToolSvc.TbHeade...   INFO  Output block config             0x000009ff 
+ToolSvc.TbHeade...   INFO  PLL config                      0x0000001e 
+ToolSvc.TbHeade...   INFO  Testpulse config                0x000a0001 
+ToolSvc.TbHeade...   INFO  SLVS config                     0x00000008 
+ToolSvc.TbHeade...   INFO  Power pulsing config            0x00000008 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  DAC values                      000 128 008 128
+ToolSvc.TbHeade...   INFO                                  010 128 199 006
+ToolSvc.TbHeade...   INFO                                  128 008 128 008
+ToolSvc.TbHeade...   INFO                                  128 128 128 128
+ToolSvc.TbHeade...   INFO                                  256 128 128 000
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+TbEventBuilder       INFO W0002_G05 (device 4) is mapped to plane 4
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO                         File header 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  ID                              0x52445053 
+ToolSvc.TbHeade...   INFO  Total size                      768 
+ToolSvc.TbHeade...   INFO  Size                            512 
+ToolSvc.TbHeade...   INFO  Format                          0x00000001 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  SPIDR ID                        0x2000029 
+ToolSvc.TbHeade...   INFO  Library version                 0x14072400 
+ToolSvc.TbHeade...   INFO  Software version                0x14071501 
+ToolSvc.TbHeade...   INFO  Firmware version                0x14072101 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  IP address                      192.168.100.1 
+ToolSvc.TbHeade...   INFO  IP port                         8192 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Date                            2014-07-27
+ToolSvc.TbHeade...   INFO  Time                            16:08:22.23
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Run number                      1024 
+ToolSvc.TbHeade...   INFO  Sequence number                 1 
+ToolSvc.TbHeade...   INFO  Run info                        10 GeV no protection covers 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Spidr configuration             0x000a0800 
+ToolSvc.TbHeade...   INFO  Data filter                     0xf3ffffff 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO                        Device header
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Type ID                         0x33585054 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Device ID                       0x278 
+ToolSvc.TbHeade...   INFO                                  W0002_H07 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  General config                  0x00000668 
+ToolSvc.TbHeade...   INFO  Output block config             0x000009ff 
+ToolSvc.TbHeade...   INFO  PLL config                      0x0000001e 
+ToolSvc.TbHeade...   INFO  Testpulse config                0x000a0001 
+ToolSvc.TbHeade...   INFO  SLVS config                     0x00000008 
+ToolSvc.TbHeade...   INFO  Power pulsing config            0x00000008 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  DAC values                      000 128 008 128
+ToolSvc.TbHeade...   INFO                                  010 128 210 006
+ToolSvc.TbHeade...   INFO                                  128 008 128 008
+ToolSvc.TbHeade...   INFO                                  128 128 128 128
+ToolSvc.TbHeade...   INFO                                  256 128 128 000
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+TbEventBuilder       INFO W0002_H07 (device 6) is mapped to plane 6
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO                         File header 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  ID                              0x52445053 
+ToolSvc.TbHeade...   INFO  Total size                      768 
+ToolSvc.TbHeade...   INFO  Size                            512 
+ToolSvc.TbHeade...   INFO  Format                          0x00000001 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  SPIDR ID                        0x2000017 
+ToolSvc.TbHeade...   INFO  Library version                 0x14072400 
+ToolSvc.TbHeade...   INFO  Software version                0x14071501 
+ToolSvc.TbHeade...   INFO  Firmware version                0x14072101 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  IP address                      192.168.100.1 
+ToolSvc.TbHeade...   INFO  IP port                         8192 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Date                            2014-07-27
+ToolSvc.TbHeade...   INFO  Time                            16:08:46.96
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Run number                      1024 
+ToolSvc.TbHeade...   INFO  Sequence number                 1 
+ToolSvc.TbHeade...   INFO  Run info                        10 GeV no protection covers 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Spidr configuration             0x000a0800 
+ToolSvc.TbHeade...   INFO  Data filter                     0xf3ffffff 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO                        Device header
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Type ID                         0x33585054 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  Device ID                       0x26a 
+ToolSvc.TbHeade...   INFO                                  W0002_J06 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  General config                  0x00000668 
+ToolSvc.TbHeade...   INFO  Output block config             0x000009ff 
+ToolSvc.TbHeade...   INFO  PLL config                      0x0000001e 
+ToolSvc.TbHeade...   INFO  Testpulse config                0x000a0001 
+ToolSvc.TbHeade...   INFO  SLVS config                     0x00000008 
+ToolSvc.TbHeade...   INFO  Power pulsing config            0x00000008 
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+ToolSvc.TbHeade...   INFO  DAC values                      000 128 008 128
+ToolSvc.TbHeade...   INFO                                  010 128 117 008
+ToolSvc.TbHeade...   INFO                                  128 008 128 008
+ToolSvc.TbHeade...   INFO                                  128 128 128 128
+ToolSvc.TbHeade...   INFO                                  256 128 128 000
+ToolSvc.TbHeade...   INFO ----------------------------------------------------------------------
+TbEventBuilder       INFO W0002_J06 (device 0) is mapped to plane 0
+TbEventBuilder       INFO Initialization successful - reading 146291680 packets
+Tracking             INFO Member list: TbSimpleTracking
+Monitoring           INFO Member list: TbHitMonitor, TbClusterPlots, TbTrackPlots, TbTriggerMonitor, TbDUTMonitor
+Output               INFO Member list: 
+ApplicationMgr       INFO Application Manager Initialized successfully
+ApplicationMgr       INFO Application Manager Started successfully
+TbEventBuilder       INFO       100 events read,       330732 hits,            0 triggers
+ApplicationMgr       INFO Application Manager Stopped successfully
+TbEventBuilder       INFO Plane  0:     18818688 packets in file,           14 hits in cache
+TbEventBuilder       INFO Plane  1:     16116982 packets in file,           20 hits in cache
+TbEventBuilder       INFO Plane  2:     17541221 packets in file,           23 hits in cache
+TbEventBuilder       INFO Plane  3:     17829521 packets in file,           20 hits in cache
+TbEventBuilder       INFO Plane  4:     15980851 packets in file,           10 hits in cache
+TbEventBuilder       INFO Plane  5:     17316763 packets in file,           19 hits in cache
+TbEventBuilder       INFO Plane  6:     18382762 packets in file,           16 hits in cache
+TbEventBuilder       INFO Plane  7:     24304892 packets in file,           13 hits in cache
+TbEventBuilder       INFO Fraction of data read: 0.00226231
+TbEventBuilder       INFO Number of packets lost: 0
+TbEventBuilder       INFO Unknown packets: 169
+TbEventBuilder       INFO Skipped 794 noise events.
+TbClustering      SUCCESS Number of counters : 8
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "NumberOfClusters0"                             |       100 |       5311 |     53.110 |     34.041 |      0.0000 |      142.00 |
+ | "NumberOfClusters1"                             |       100 |       5357 |     53.570 |     34.254 |      0.0000 |      141.00 |
+ | "NumberOfClusters2"                             |       100 |       5504 |     55.040 |     35.396 |      0.0000 |      149.00 |
+ | "NumberOfClusters3"                             |       100 |       5608 |     56.080 |     35.729 |      0.0000 |      142.00 |
+ | "NumberOfClusters4"                             |       100 |       5819 |     58.190 |     37.743 |      0.0000 |      154.00 |
+ | "NumberOfClusters5"                             |       100 |       6113 |     61.130 |     39.774 |      0.0000 |      162.00 |
+ | "NumberOfClusters6"                             |       100 |       6295 |     62.950 |     41.199 |      0.0000 |      165.00 |
+ | "NumberOfClusters7"                             |       100 |       6566 |     65.660 |     42.701 |      0.0000 |      177.00 |
+TbSimpleTracking  SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "NumberOfChiRejectedVols"                       |         8 |          8 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+ | "NumberOfTracks"                                |       100 |       4534 |     45.340 |     30.149 |      0.0000 |      124.00 |
+TbHitMonitor      SUCCESS Booked 40 Histogram(s) : 1D=32 2D=8 
+TbClusterPlots    SUCCESS Booked 220 Histogram(s) : 1D=162 2D=58 
+TbClusterPlots    SUCCESS Number of counters : 8
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ |*"effFractionAssociated0"                        |      5311 |       4391 |(  82.6775 +- 0.519291 )%|   -------   |   -------   |
+ |*"effFractionAssociated1"                        |      5357 |       4527 |(  84.5063 +- 0.494381 )%|   -------   |   -------   |
+ |*"effFractionAssociated2"                        |      5504 |       4534 |(  82.3765 +- 0.513581 )%|   -------   |   -------   |
+ |*"effFractionAssociated3"                        |      5608 |       4518 |(  80.5635 +- 0.528414 )%|   -------   |   -------   |
+ |*"effFractionAssociated4"                        |      5819 |       4368 |(  75.0644 +- 0.567156 )%|   -------   |   -------   |
+ |*"effFractionAssociated5"                        |      6113 |       4534 |(  74.1698 +- 0.559822 )%|   -------   |   -------   |
+ |*"effFractionAssociated6"                        |      6295 |       4534 |(  72.0254 +- 0.565753 )%|   -------   |   -------   |
+ |*"effFractionAssociated7"                        |      6566 |       4495 |(  68.4587 +- 0.573461 )%|   -------   |   -------   |
+TbTrackPlots      SUCCESS Booked 192 Histogram(s) : 1D=96 2D=88 1DProf=8 
+TbTriggerMonitor  SUCCESS Booked 17 Histogram(s) : 1D=17 
+ToolSvc              INFO Removing all tools created by ToolSvc
+TimingAuditor.T...   INFO --------------------------------------------------------------------------------------------------
+TimingAuditor.T...   INFO This machine has a speed about   3.33 times the speed of a 2.8 GHz Xeon.
+TimingAuditor.T...   INFO Algorithm          (millisec) |    <user> |   <clock> |      min       max | entries | total (s) |
+TimingAuditor.T...   INFO --------------------------------------------------------------------------------------------------
+TimingAuditor.T...   INFO EVENT LOOP                    |     4.909 |     5.316 |    0.244      49.7 |     100 |     0.532 |
+TimingAuditor.T...   INFO  KeplerSequencer              |     4.809 |     5.225 |    0.231      49.5 |     100 |     0.523 |
+TimingAuditor.T...   INFO   Telescope                   |     1.300 |     1.683 |    0.146      49.1 |     100 |     0.168 |
+TimingAuditor.T...   INFO    TbEventBuilder             |     0.660 |     0.709 |    0.060      14.5 |     100 |     0.071 |
+TimingAuditor.T...   INFO    TbClustering               |     0.360 |     0.494 |    0.045      13.9 |     100 |     0.049 |
+TimingAuditor.T...   INFO    Tracking                   |     0.250 |     0.454 |    0.019      20.5 |     100 |     0.045 |
+TimingAuditor.T...   INFO     TbTracking                |     0.240 |     0.451 |    0.015      20.5 |     100 |     0.045 |
+TimingAuditor.T...   INFO    TbTriggerAssociator        |     0.010 |     0.018 |    0.012       0.1 |     100 |     0.002 |
+TimingAuditor.T...   INFO   Monitoring                  |     3.510 |     3.537 |    0.066       9.5 |     100 |     0.354 |
+TimingAuditor.T...   INFO    TbHitMonitor               |     0.350 |     0.337 |    0.014       0.9 |     100 |     0.034 |
+TimingAuditor.T...   INFO    TbClusterPlots             |     1.080 |     1.090 |    0.023       2.9 |     100 |     0.109 |
+TimingAuditor.T...   INFO    TbTrackPlots               |     2.040 |     2.082 |    0.011       5.7 |     100 |     0.208 |
+TimingAuditor.T...   INFO    TbTriggerMonitor           |     0.020 |     0.019 |    0.013       0.0 |     100 |     0.002 |
+TimingAuditor.T...   INFO   Output                      |     0.000 |     0.001 |    0.000       0.0 |     100 |     0.000 |
+TimingAuditor.T...   INFO --------------------------------------------------------------------------------------------------
+ApplicationMgr       INFO Application Manager Finalized successfully
+ApplicationMgr       INFO Application Manager Terminated successfully

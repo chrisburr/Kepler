@@ -1,0 +1,25 @@
+!-----------------------------------------------------------------------------
+! Package     : Tb/TbAnalysis
+! Responsible :
+! Purpose     : Collection of algorithms for specific test beam analyses
+!-----------------------------------------------------------------------------
+
+! 2015-11-12 - Dan Saunders
+ - Add TbEfficiency.
+
+! 2015-11-11 - Tim Evans
+ - Add TbVertexing.
+
+! 2015-10-23 - Heinrich Schindler
+ - Fix compiler warnings in TbEffPur uncovered by clang.
+
+!========================= TbAnalysis v1r1 2015-05-19 =======================
+
+! 2015-03-04 - Tim Evans
+ - Add plots to TbTimewalkMonitor
+
+!========================= TbAnalysis v1r0 2014-11-30 =======================
+
+! 2014-11-17 - Heinrich Schindler
+ - Initial import
+

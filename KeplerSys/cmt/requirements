@@ -1,0 +1,28 @@
+package KeplerSys
+version v3r0
+
+branches cmt doc
+ 
+#=======================================================
+# packages included in the KEPLER project
+#=======================================================
+
+use Kepler       v3r0 Tb
+
+use TbAlgorithms v2r2 Tb
+use TbAlignment  v1r0 Tb
+use TbAnalysis   v1r1 Tb
+use TbEvent      v2r2 Tb
+use TbIO         v2r0 Tb
+use TbKernel     v3r0 Tb
+use TbSimulation v1r3 Tb
+use TbUT         v1r1 Tb
+
+# Allow the generation of the SAM QMTest
+apply_pattern QMTest
+
+# Declare this as a container package
+apply_pattern container_package
+
+# Allow the generation of QMTest summary 
+apply_pattern QMTestSummarize

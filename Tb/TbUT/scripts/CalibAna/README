@@ -1,0 +1,13 @@
+This is a quick program to run over a single calibration run. It produces an output ntuple with 4 plots as well as a PNG file with all 4 plots, being, the cluster charge distribution, the charge(channel-1), the charge(channel+1), and charge(channel+1)-charge(channel-1). If the detector is A-type, the program takes the channel number and adds 128, since only Beetle 2 and 4 are connected. For the D-type, the channel number is taken directly. 
+
+
+To compile, in the CalibAna directory: 
+
+> make
+
+To run: 
+
+> ./analyzeCalib -i calib_36.root -o outputfile_36.root -n 36 -t 0 -p -15
+
+Where calib_36.root is the Calibration*_Tuple.root that is produced after running the TbUT software, outputfile_36.root is the output file, 36 is the channel number of the calibration run, 0 is the detector type (0=A, 1=D, 2=Micron mini, 3=Ham mini), and -15 is the phase being tested. 
+

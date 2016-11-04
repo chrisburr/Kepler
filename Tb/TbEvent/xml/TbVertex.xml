@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE gdd SYSTEM "gdd.dtd" >
+<gdd>
+  <package name = "TbEvent">
+    <class name = "TbVertex"
+           id = "4515"
+           author = "D. Saunders"
+           desc = "Reconstructed telescope vertex"
+           serializers = "FALSE">
+      <location name = "Default" place = "Rec/Tb/TbVertices"/>
+      <import name = "Event/TbTrack"/>
+      <base name = "KeyedObject&lt;int&gt;"/>
+      &KeyedObject;
+      
+      <relation name = 'tracks' 
+                type = 'LHCb::TbTrack' 
+                desc = 'tracks connecting at the vertex'
+                multiplicity = 'm'/>
+                
+      <attribute name = "x"
+                 type = "double"
+                 desc = "x position of the vertex"/>
+                 
+      <attribute name = "y"
+                 type = "double"
+                 desc = "y position of the vertex"/>
+                 
+      <attribute name = "z"
+                 type = "double"
+                 desc = "z position of the vertex"/>
+                 
+      <attribute name = "htime"
+                 type = "double"
+                 desc = "htime position of the vertex"/>
+                 
+                 
+      <attribute name = "interactionPlane"
+                 type = "unsigned int"
+                 desc = "plane forming the vertex"/>
+    </class>
+  </package>
+</gdd>

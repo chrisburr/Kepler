@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE gdd SYSTEM "gdd.dtd" >
+<gdd>
+  <package name = "TbEvent">
+    <class name = "TbTrack"
+           id = "4512"
+           author = "H. Schindler"
+           desc = "Reconstructed telescope track"
+           serializers = "FALSE">
+      <location name = "Default" place = "Rec/Tb/TbTracks"/>
+      <import name = "Event/TbCluster"/>
+      <import name = "Event/TbTrigger"/>
+      <import name = "Event/TbState"/>
+      <import name = "Event/TbNode"/>
+      <import name = "vector" std = "TRUE"/>
+      <base name = "KeyedObject&lt;int&gt;"/>
+      &KeyedObject;
+
+      <enum name = 'FitStatus'
+            desc = 'Method used for fitting the track'
+            strTypConv = 'TRUE'
+            unknownValue = 'None'
+            access = 'PUBLIC' >
+        <enumval name = "None"         value = "0" desc = "Track was not fitted"/>
+        <enumval name = "StraightLine" value = "1" desc = "Straight-line fit"/>
+        <enumval name = "Kalman"       value = "2" desc = "Kalman filter"/>
+      </enum>
+      
+      <constructor desc = 'Default constructor'
+                   initList = "m_time(0), m_htime(0.), m_firstState(), m_chi2PerNdof(0.), m_ndof(0), m_nodes(), m_vertexed(false), m_parentVertex(false)">
+        <code>
+  m_clusters.reserve(10);
+  m_triggers.reserve(10);
+  m_associatedClusters.reserve(10);
+  m_nodes.reserve(10);
+        </code>
+      </constructor>
+      
+      <relation name = 'clusters' 
+                type = 'LHCb::TbCluster' 
+                desc = 'clusters forming this track'
+                multiplicity = 'm'/>
+      
+      <relation name = 'triggers' 
+                type = 'LHCb::TbTrigger' 
+                desc = 'triggers associated to this track'
+                multiplicity = 'm'/>
+
+      <relation name = 'associatedClusters' 
+                type = 'LHCb::TbCluster' 
+                desc = 'clusters associated to this track'
+                multiplicity = 'm'/>
+
+      <attribute name = "time"
+                 type = "uint64_t" 
+                 desc = "global timestamp"/>
+
+      <attribute name = "htime"
+                 type = "double"
+                 desc = "local timestamp in ns"/>
+
+      <attribute name = "fitStatus"
+                 type = "LHCb::TbTrack::FitStatus"
+                 desc = "fit status"/>
+
+      <attribute name = "firstState"
+                 desc = "first state of the track"
+                 type = 'LHCb::TbState'/>
+      
+      <attribute name = "chi2PerNdof"
+                 desc = "chi-squared per degree of freedom of the track"
+                 type = "double"/>
+      
+      <attribute name = "ndof"
+                 desc = "number of degrees of freedom"
+                 type = "unsigned int"/>
+      
+      <attribute type = 'std::vector&lt;LHCb::TbNode&gt;'
+                 name = 'nodes'
+                 desc = 'container with all nodes'
+                 setMeth= 'FALSE'/>
+
+      <attribute name = 'vertexed'
+                 desc = 'flag whether this track forms part of a vertex'
+                 type = 'bool'/>
+                                  
+      <attribute name = 'parentVertex'
+                 desc = 'flag whether this track forms the start of a vertex'
+                 type = 'bool'/>
+      
+      <constructor desc = "Copy constructor" >
+         <arg const="TRUE" name="track" type="LHCb::TbTrack"/>
+      </constructor>
+
+      <method type = 'void'
+              name = 'clearNodes'
+              desc = 'Clear the node vector'>
+      </method>
+
+      <method type = 'double'
+              name = 'chi2'
+              desc = 'Retrieve the chi-squared of the track'
+              const = 'TRUE'>
+        <code>
+  return m_chi2PerNdof * m_ndof;
+        </code>
+      </method>
+
+      <method name = "clone"
+              desc = "Clone the track without keeping the clusters (you take ownership of the pointer)"
+              type = "LHCb::TbTrack*"
+              virtual = "TRUE"/>
+
+      <method name = 'addToNodes'
+              desc = 'Add a node to the list'>
+        <arg type = 'const LHCb::TbNode' name = 'node'/>
+      </method>
+  
+      <method name = "size"
+              desc = "Return the number of clusters forming this track"
+              type = "unsigned int"
+              const = "TRUE">
+        <code>
+  return m_clusters.size();
+        </code>
+      </method>
+      
+      <method name = "setAssociated"
+              desc = "Flag the clusters in a track as associated / unassociated"
+              type = "void"
+              argList = "const bool flag">
+        <code>
+  for (auto it = m_clusters.begin(), end = m_clusters.end(); it != end; ++it) {
+    (*it)->setAssociated(flag);
+  }
+        </code>
+      </method>
+  
+    </class>
+  </package>
+</gdd>

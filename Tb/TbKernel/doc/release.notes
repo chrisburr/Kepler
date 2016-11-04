@@ -1,0 +1,203 @@
+!-----------------------------------------------------------------------------
+! Package     : Tb/TbKernel
+! Responsible : 
+! Purpose     : Tools and services for Timepix3 testbeam analysis
+!-----------------------------------------------------------------------------
+
+! 2016-07-27 - Heinrich Schindler
+ - TbKalmanTrackFit: set noise squared term separately for each plane.
+
+! 2016-07-21 - Heinrich Schindler
+ - TbTrackFit: store nodes (measurement, state and residual) on track.
+ - TbKalmanTrackFit: store nodes instead of states.
+ - TbGeometrySvc: calculate intercepts depending on track fit status.
+ - Use message stream short cuts in services. Don't need MsgStream pointer.
+
+! 2016-02-23 - Heinrich Schindler
+ - Move TbCondFile from src to src/lib (so it can be used by other packages).
+ - Add eta config to TbDataSvc.
+
+! 2015-11-17 - Tim Evans
+ - Changed the behaviour of the pixel service to deal with bad fits in the 
+   calibration. Now if the surrogate parameters are nan/inf, the average of
+   the nearest neighbours in the column is taken. If the neighbour is also bad, or an
+   edge, is not included. If no suitable neighbours are found, the pixel is masked 
+   (in practice, this should probably not happen) 
+
+! 2015-10-28 - Heinrich Schindler
+ - TbAlignmentTrack: also store the cloned clusters in m_clusters to avoid
+   memory leaks.
+
+! 2015-10-17 - Heinrich Schindler
+ - Remove unused flag refitclusters from (I)TbTrackFit.
+
+! 2015-08-11 - Tim Evans
+ - Added TbGeomFunctions.
+
+!========================= TbKernel v3r0 2015-05-19 ==========================
+
+! 2015-05-01 - Heinrich Schindler
+ - Move per-chip timing correction from TbTimingSvc to TbPixelSvc.
+
+! 2015-03-24 - Heinrich Schindler
+ - Add TbKalmanTrackFit tool.
+ - Adapt TbGeometrySvc::intercept function to handle multi-state tracks.
+
+! 2015-03-09 - Heinrich Schindler
+ - TbGeometrySvc: remove unused functions, add function pointToPixel.
+
+! 2015-03-04 - Heinrich Schindler
+ - TbTrackFit: add declareProperty for masked planes.
+
+! 2015-01-22 - Heinrich Schindler
+ - TbModule: rename chip to TbChip, remove unused code.
+ - (I)TbGeometrySvc: rename index to moduleIndex and deviceId to deviceIndex.
+ - Remove unused code in TbTimingSvc, small tidying up in TbPixelSvc.
+
+! 2015-01-20 - Heinrich Schindler
+ - Add function pixelToPoint to TbGeometrySvc. Cache pixel centres in 
+   TbGeometrySvc instead of in each TbModule. 
+
+! 2014-11-17 - Tim Evans
+ - Added TbBufferedFile as general interface to remote Root files that supports 
+   fast templated buffers, that can be used either by configuration files or 
+   for raw data
+ - Added TbDataSvc that handles all input files (data + configuration) in a 
+   common way. 
+ - Added TbCondFile and TbNetworkCondFile that inherit from ITbCondFile, 
+   that make common the handling between local and network files. Also unifies
+   the parsing in the configuration of the services.
+
+!========================= TbKernel v2r1 2014-11-30 ==========================
+
+! 2014-11-22 - Heinrich Schindler
+ - Add TbClusterFinder tool.
+
+! 2014-10-17 - Tim Evans
+ - Fixed a sign error in TbTimingSvc and added TrimDac functionality to TbPixelSvc
+
+! 2014-10-08 - Hella Snoek
+ - Added robustness against stdoperator[] feature
+
+! 2014-10-8 - Tim Evans
+ - Added configurable time offset per plane to the timing service.
+   This is defined such that the 0th plane is the reference plane, i.e.
+   does not have a time offset. Only affects hTime, not the time.
+
+! 2014-10-4 - Tim Evans
+ - Added column offsets to the pixel config service, changes the format 
+   of the options file with Mask and Offset keywords
+
+! 2014-09-29 - Dan Saunders
+ - Change track fit to use errors assigned to each cluster.
+
+!========================= TbKernel v2r0 2014-08-18 ==========================
+
+! 2014-08-11 - Heinrich Schindler
+ - Change format of pixel configuration file to use chip ID instead of plane.
+
+! 2014-08-05 - Heinrich Schindler
+ - TbPixelSvc: fix compiler warning (inline function in abstract interface).
+
+! 2014-07-27 - Tim Evans 
+ - TbPixelSvc : Added service to mask pixels 
+
+! 2014-07-22 - Heinrich Schindler
+ - TbTrackFit: add option to mask planes.
+
+! 2014-07-21 - Heinrich Schindler
+ - Add TbConstants (global constants).
+ - Update conversion factors between local and global timestamps.
+ - Bugfix in TbTimingSvc for times < offset. 
+
+! 2014-07-21 - Panagiotis Tsopelas
+ - Calculate chi2 residuals using intercept method from TbGeometrySvc
+
+! 2014-07-17 - Heinrich Schindler
+ - Add TbTimingSvc.
+
+! 2014-07-08 - Tim Evans
+ - Changes to reflect changes to naming in TbEvent
+
+! 2014-07-03 - Angelo Di Canto
+ - TbAlignmentTrack: clusters are stored within the TbTrack, added (x,y)
+   position of the track on the reference plane as a member 
+
+! 2014-06-27 - Heinrich Schindler
+ - Add functor for sorting by ToT value.
+ - Add functor for sorting by plane and timestamp.
+
+! 2014-06-24 - Heinrich Schindler
+ - Add function to calculate intercept of track and plane.
+ - Remove globalToLocal/localToGlobal transformations with module label 
+   as argument.
+
+! 2014-06-06 - Heinrich Schindler
+ - TbGeometrySvc: delete message service in constructor.
+ - TbTrackFit: fix warning from clang (implicit conversion NULL to int).
+
+!========================= TbKernel v1r0 2014-05-30 ==========================
+
+! 2014-05-29 - Heinrich Schindler
+ - TbGeometrySvc: fix unitialised message service pointer. 
+ - TbAlignmentTrack: delete the stored clusters.
+ - TbGeometrySvc: sort modules by z-position.
+
+! 2014-05-28 - Heinrich Schindler
+ - Add TbFunctors.
+
+! 2014-05-26 - Heinrich Schindler
+ - Trivial optimisations in TbTrackFit
+
+! 2014-05-23 - Panagiotis Tsopelas
+ - In TbTrackFit, TbAlignmentTrack :
+   Renamed "chi2" -> "chi2PerNdof" after change in TbTrack.
+   Changed every call to a first state parameter (x0, y0, tx, ty)
+   to a call through the "firstState".
+
+! 2014-05-21 - Heinrich Schindler
+ - Remove TbClusterFinder helper class (now in TbAlgorithms).
+
+! 2014-05-15 - Marco Clemencic
+ - Fixed CMake configuration.
+
+! 2014-05-06 - Panagiotis Tsopelas
+ - Added straight line fit in TbTrackFit. 
+   This method fills the first state of a TbTrack, its chi2 & ndof
+ - Modified ITbTrackFit: removed const from fit()
+
+! 2014-05-02 - Heinrich Schindler
+ - Add functions to retrieve TbModule(s) to ITbGeometrySvc interface.
+
+! 2014-04-30 - Heinrich Schindler
+ - Move TbModule from src to TbKernel.
+
+! 2014-04-29 - Dan Saunders
+ - Added TbClusterFinder.cpp (an object for retrieving clusters at 
+   particular times).
+
+! 2014-04-14 - Heinrich Schindler
+ - Updates to TbGeometrySvc
+
+! 2014-04-14 - Heinrich Schindler
+ - Add TbTrackFit interface and dummy implementation. 
+
+! 2014-04-11 - Heinrich Schindler
+ - Run clang-format to get consistent formatting
+ - Change class member functions to start with lower-case letters
+
+! 2014-04-07 - Christoph Hombach
+ - Added exception error in TbGeometrySvc in case Alignment-file is not found.
+
+! 2014-04-07 - Christoph Hombach
+ - Added TbModule class containing all information 
+   (position, transformation, name, number) regarding modules. 
+   Added vector of modules in TbGeometrySvc. 
+   A int is given to each module when reading in ConditionsFile 
+   (0 for first, 1 for second, etc..). 
+   This vector can be called e.g. by geomSvc()->Modules() 
+   or a specific module by geomSvc()->Module(<module id>) or 
+   geomSvc()->Module(<number>).
+
+! 2014-03-31 - Heinrich Schindler
+ - Initial import 
