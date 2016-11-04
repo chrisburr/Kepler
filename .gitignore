@@ -1,2 +1,4 @@
 build.x86_64-*
 .svn/
+
+*.pyc
