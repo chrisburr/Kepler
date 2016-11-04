@@ -78,11 +78,17 @@ class TbAlignmentBase : public GaudiHistoTool {
   }
   /// Determine whether a cluster is close to the edge region of a plane.
   bool isEdge(const LHCb::TbCluster* cluster) {
-    return cluster->xloc() <  0.5 ||
-           cluster->xloc() > 13.5 ||
-           cluster->yloc() < 0.5 ||
-           cluster->yloc() > 13.5 ;
+    if (m_modules[cluster->plane()]->type() == TbModule::Tpx3Triple) {
+      return cluster->xloc() <  0.5 ||
+             cluster->xloc() > 41.7 ||
+             cluster->yloc() < 0.5 ||
+             cluster->yloc() > 13.5 ;
+    } else {
+      return cluster->xloc() <  0.5 ||
+             cluster->xloc() > 13.5 ||
+             cluster->yloc() < 0.5 ||
+             cluster->yloc() > 13.5 ;
+    }
   }
-
 
 };
