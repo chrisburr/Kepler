@@ -42,7 +42,7 @@ StatusCode TbDataSvc::finalize() { return Service::finalize(); }
 //============================================================================
 std::string TbDataSvc::expandPath(const std::string& file) {
 
-  if (file.find("eos") == 0) {
+  if (file.find("eos") == 0 || file.find("/eos") == 0) {
     return "root://eoslhcb.cern.ch//" + file;
   }
   return file;
@@ -69,9 +69,7 @@ StatusCode TbDataSvc::initialize() {
         continue;
       }
       // Assume the specified path is a directory and list its contents.
-      const std::string eospath =
-          "/afs/cern.ch/project/eos/installation/0.3.15/";
-      const std::string cmd = eospath + "bin/eos.select ls " + *its;
+      const std::string cmd = "xrdfs root://eoslhcb.cern.ch ls " + *its;
       FILE* proc = popen(cmd.c_str(), "r");
       char buf[4096];
       // Loop over the entries.
@@ -82,7 +80,7 @@ StatusCode TbDataSvc::initialize() {
         if (p == std::string::npos) continue;
         // Add the file to the list.
         fname = fname.substr(0, p + 4);
-        m_inputFiles.push_back(expandPath(*its + fname));
+        m_inputFiles.push_back(expandPath(fname));
       }
       pclose(proc);
     } else {
