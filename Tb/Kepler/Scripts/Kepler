@@ -22,7 +22,9 @@ if [ "$1" -gt "4999" ]; then tb=May2015; fi
 if [ "$1" -gt "6733" ]; then tb=July2015; fi
 if [ "$1" -gt "12000" ]; then tb=Sep2015; fi
 if [ "$1" -gt "13509" ]; then tb=Nov2015; fi
-if [ "$1" -gt "15000" ]; then tb=May2016; fi 
+if [ "$1" -gt "15000" ]; then tb=May2016; fi
+if [ "$1" -gt "17999" ]; then tb=Aug2016; fi
+if [ "$1" -gt "19999" ]; then tb=Nov2016; fi
 # TBDATA
 if [ -z "$TBDATA" ]; then
   echo "No output directory defined - define variable $TBDATA"
